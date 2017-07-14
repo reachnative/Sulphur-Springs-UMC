@@ -13,7 +13,7 @@ return array(
 	'server' => 'localhost',
 
 	// The name of the database to select.
-	'database' => 'ssumc_main',
+	'database' => 'ssumc_dev',
 
 	// The database username to connect with.
 	'user' => 'ssumc_cowens',
