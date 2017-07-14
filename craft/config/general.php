@@ -31,6 +31,6 @@ return array(
 	'devMode' => false,
 
 	//Omit index.php in URLs
-	'omitScriptNameInUrls' => false,
+	'omitScriptNameInUrls' => true,
 
 );
