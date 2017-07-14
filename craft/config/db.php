@@ -13,10 +13,10 @@ return array(
 	'server' => 'localhost',
 
 	// The name of the database to select.
-	'database' => 'ssumc_main',
+	'database' => 'ssumc_dev',
 
 	// The database username to connect with.
-	'user' => 'ssumc',
+	'user' => 'ssumc_cowens',
 
 	// The database password to connect with.
 	'password' => 'LoopDime7!',
