@@ -1,0 +1,52 @@
+    <footer class="footer">
+      <div id="first-column">
+            <h3>Service Times</h3>
+            <p>{{ serviceTimes.serviceTimesField }}</p>
+            <h3>Contact</h3>
+            <p>{{ footerContact.location }}</br><a href="tel:{{ footerContact.phoneNumber }}">{{ footerContact.phoneNumber }}</a></p>
+            <h3>Office Hours</h3>
+            <p>{{ footerOfficeHours.officeHours }}</p>
+            <div id="divider"></div>
+      </div>
+
+      <div id="second-column">
+        <ul>
+          <li><h3>I'm New</h3></li>
+          <li><a href="about">About Our Church</a></li>
+          <li><a href="history">History</a></li>
+          <li><a href="what-we-believe">What We Believe</a></li>
+          <li><a href="membership">Membership</a></li>
+        </ul>
+      </div>
+      <div id="third-column">
+        <ul>
+          <li><h3>Connect</h3></li>
+          <li><a href="about">Children</a></li>
+          <li><a href="history">Youth</a></li>
+          <li><a href="what-we-believe">Adults</a></li>
+          <li><a href="membership">Worship</a></li>
+        </ul>
+      </div>
+      <div id="forth-column">
+        <ul>
+          <li><h3>Mission</h3></li>
+          <li><a href="um-men-and-women">UM Men & Women</a></li>
+          <li><a href="upper-room-quilters">Upper Room Quilters</a></li>
+          <li><a href="harvest-festival">Harvest Festival</a></li>
+        </ul>
+      </div>
+      <div id="fifth-column">
+        <h3>Join Our Newsletter</h3>
+        <p>Register to receive our monthly<br>newsletter sent directly to your email.</p>
+        <div>
+          <form action="//sulphurspringsumc.us16.list-manage.com/subscribe/post?u=12bba37f7beae36988cb96fd5&amp;id=fe0a3cb1ed" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email Address" required>
+            <input type="submit" value="Subscribe">
+          </form>
+        </div>
+      </div>
+      <div id="copyright">&copy {{ now.year }} {{ siteName }}. All rights reserved  •  Designed by <a href="http://www.reachnative.com">Reach Native</a></div>
+    </footer>
+</div>
+</body>
+</html>

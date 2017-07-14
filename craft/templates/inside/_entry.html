@@ -1,0 +1,48 @@
+{#
+ # News entry template
+ # -------------------
+ #
+ # This template gets loaded whenever a News entry’s URL is
+ # requested. That’s because the News section’s Template setting is
+ # set to “news/_entry”, the path to this template.
+ #
+ # When this template is loaded, it will already have an ‘entry’
+ # variable, set to the requested News entry.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+{% set bg_image = block.coverImageElement.first() %}
+<div class="inside_bg_cover"><img src="{{ bg_image.url }}">
+  <div id="inside_title"><h1>{{ entry.title }}</h1></div><img src="">
+</div>
+
+<div id="inside_body_container">
+  <div id="body">
+      {% set topLevel = (entry.level == 1) ? entry : entry.getAncestors().level(1).first()  %}
+
+        {% if topLevel.hasDescendants %}
+
+            {% set subnav =  topLevel.getDescendants()  %}
+
+            <ul class="crumbs">
+              {% nav page in subnav  %}
+              <li><a href="{{ page.url }}">{{page}}</a></li>
+              {% endnav %}
+            </ul>
+
+       {% endif %}
+
+       <h2>{{ entry.title }}</h2>
+       {% set block = block.insidePageElements.first() %}
+       <p></p>
+
+  </div>
+</div>
+
+{% endblock %}

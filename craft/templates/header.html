@@ -1,0 +1,44 @@
+{% if craft.request.getSegment(1) == '' %}
+    <header id="header">
+          <div class="main_logo"><a href="{{ siteUrl }}"><img src="{{ siteUrl }}/images/ssumc_logo.png"></a></div>
+
+      {% set parents = craft.entries.section('menu').getAncestors().level(1).limit(5) %}
+      <nav class="main_nav">
+          <ul class="parent">
+            {% nav parent in parents %}
+            <li>
+              {{ parent.getLink() }}
+
+              {% if parents.hasDescendants  %}
+                {% set children = parent.getDescendants() %}
+
+                  <ul class="dropdown">
+                    {% for child in children %}
+                      <li>{{ child.getLink() }}</li>
+                    {% endfor %}
+                  </ul>
+              {% endif %}
+            </li>
+              {% endnav %}
+          </ul>
+
+      </nav>
+    </header>
+{% else %}
+    <header id="header_inside">
+          <div class="main_logo_white"><a href="{{ siteUrl }}"><img src="{{ siteUrl }}/images/ssumc_logo_white.png"></a></div>
+
+      <nav class="main_nav_inside">
+          <ul>
+            {% nav page in craft.entries.section('menu').level(1).limit(5)%}
+            <li class="{{ page.id == entry.id ? 'active' }}">
+              {{ page.link }}
+            </li>
+              {% endnav %}
+          </ul>
+
+
+      </nav>
+    </header>
+
+{% endif %}

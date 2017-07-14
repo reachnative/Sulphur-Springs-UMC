@@ -1,0 +1,15 @@
+<div class="slider_container">
+    <div class="slider">
+      {% for block in entry.homepageSlider %}
+        <ul>
+            {% set image = block.image.first() %}
+            <li><div id="text">{{ block.slideText }}</div><img src="{{ image.url }}">
+              <div class="slider_button"><a href="{{ block.buttonUrl }}">{{ block.buttonText }}</a></div></li>
+        </ul>
+      {% endfor %}
+    </div>
+    <script>$(document).ready(function(){
+        $("#text").delay(10000).animate({left: '-5000px'}, 1500);
+
+      });</script>
+</div>
