@@ -1,4 +1,1 @@
-# Redirect to same url without index.php
-RewriteCond %{THE_REQUEST} ^GET./index\.php(/.*)?$ [NC]
-RewriteCond %{REQUEST_URI} !^/index\.php/admin\b [NC]
-RewriteRule ^index\.php(/(.*))?$ /$2 [R=302,NE,L]
+deny from all
