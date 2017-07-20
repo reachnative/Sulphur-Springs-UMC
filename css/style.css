@@ -425,8 +425,19 @@ ul.parent li ul.dropdown li {
 .inside_bg_cover {
   width: 100%;
   height: 300px;
-  background-color: #151515;
+  background-color: rgba(21, 21, 21, 1);
   overflow: hidden;
+}
+.inside_bg_cover img {
+  margin-top: -300px;
+  top: -50px;
+  width: 80em;
+  height: auto;
+  background-size: 100%;
+  opacity: .4;
+  overflow: cover;
+  position: relative;
+  display: block;
 }
 
 #inside_title h1{
