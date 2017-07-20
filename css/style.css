@@ -441,7 +441,7 @@ ul.parent li ul.dropdown li {
 }
 
 #inside_title h1{
-  top: 100px;
+  top: 1.5em;
   position: relative;
   margin: 0 auto;
   left: 0;
@@ -450,6 +450,7 @@ ul.parent li ul.dropdown li {
   font-size: 4em;
   padding-bottom: 30px;
   color: #ffffff;
+  z-index: 20 !important;
 }
 
 #inside_body_container {
