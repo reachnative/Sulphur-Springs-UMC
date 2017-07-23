@@ -15,7 +15,6 @@
 	<meta charset="utf-8" />
 	<title>{% if entry.title is defined %}{{ entry.title }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
-  <link rel="icon" type="image/png" href="{{ siteUrl }}/images/favicon.png">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -23,9 +22,9 @@
 </head>
 
 <body>
-	<div id="container">
+	<div id="wrap">
 	  {% include 'header.html' %}
 
     	  {% block content %}
     	  {% endblock %}
-		{% include 'footer.html' %}
+    {% include 'footer.html' %}
