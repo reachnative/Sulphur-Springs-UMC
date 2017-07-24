@@ -526,6 +526,62 @@ ul.parent li ul.dropdown li {
   clear: both;
 }
 
+/* Staff Section
+======================*/
+.staff_member {
+  padding: 20px 0;
+}
+#profile img {
+  position: relative;
+  left: 0;
+  padding-right: 20px;
+  display: block;
+  width: 200px;
+  height: auto;
+}
+
+#full_name {
+  top: -150px;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 600;
+  position: relative;
+  left: 320px;
+}
+
+#title {
+  top: -150px;
+  text-align: left;
+  font-size: 14px;
+  position: relative;
+  left: 320px;
+}
+
+#bio {
+  top: -150px;
+  text-align: left;
+  font-size: 14px;
+  position: relative;
+  left: 320px;
+
+}
+
+#staff_email {
+  top: -150px;
+  text-align: left;
+  font-size: 14px;
+  position: relative;
+  left: 320px;
+  text-decoration: none;
+}
+
+#staff_email a {
+  color: #151515;
+  padding-bottom: 1px;
+  border-bottom: 2px solid #151515;
+  text-decoration: none;
+}
+
 /* Footer Section
 ======================*/
 footer {
