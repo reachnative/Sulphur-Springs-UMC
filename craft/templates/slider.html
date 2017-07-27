@@ -1,15 +1,47 @@
+<div class="btn-bar">
+    <div id="buttons"><a id="prev" href="#"></a><a id="next" href="#"></a></div></div>
+
 <div class="slider_container">
     <div class="slider">
-      {% for block in entry.homepageSlider %}
+      {% set image = entry.homepageBackground.first() %}
+        <img src="{{ image.url }}">
+{% for block in entry.homepageSlider %}
         <ul>
-            {% set image = block.image.first() %}
-            <li><div id="text">{{ block.slideText }}</div><img src="{{ image.url }}">
-              <div class="slider_button"><a href="{{ block.buttonUrl }}">{{ block.buttonText }}</a></div></li>
+            <li><div id="text">{{ block.slideText }}</div></li>
+
         </ul>
-      {% endfor %}
+{% endfor %}
+      <div class="slider_button"><a href="{{ block.buttonUrl }}">Discover More</a></div>
     </div>
-    <script>$(document).ready(function(){
+    <script>/*$(document).ready(function(){
         $("#text").delay(10000).animate({left: '-5000px'}, 1500);
 
-      });</script>
+      }); */
+
+
+//Slider Settings
+// hide all quotes except the first
+$('li #text').hide().eq(0).show();
+
+var pause = 10000;
+var motion = 1000;
+
+var quotes= $('li #text');
+var count = quotes.length;
+var i = 0;
+
+setTimeout(transition,pause);
+
+function transition(){
+    quotes.eq(i).animate({opacity:'toggle'}, motion);
+
+    if(++i>=count){
+        i=0;
+    }
+
+    quotes.eq(i).animate({opacity:'toggle'}, motion);
+
+    setTimeout(transition, pause);
+}
+      </script>
 </div>

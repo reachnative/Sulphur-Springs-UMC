@@ -1,5 +1,5 @@
 {% if craft.request.getSegment(1) == '' %}
-    <header id="header">
+    <header id="header_top">
           <div class="main_logo"><a href="{{ siteUrl }}"><img src="{{ siteUrl }}/images/ssumc_logo.png"></a></div>
 
       {% set parents = craft.entries.section('menu').getAncestors().level(1).limit(5) %}

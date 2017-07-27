@@ -17,7 +17,13 @@
 
 {% block content %}
 
+{% if entry.redirectUrl %}
+    {% redirect entry.redirectUrl %}
+{% endif %}
+
 {% set bg_image = entry.coverImage.first() %}
+
+
 
   <div class="inside_bg_cover"><div id="inside_title"><h1>{{ entry.title }}</h1></div><img src="{{ bg_image.getUrl }}"></div>
 <div id="inside_wrap">
@@ -50,7 +56,6 @@
                   <div>{{ block.videoBlock.first() }}</div>
 
               {% case "form" %}
-
 
               {% default %}
                   <p>No content found.</p>
