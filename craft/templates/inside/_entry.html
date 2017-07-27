@@ -56,6 +56,17 @@
                   <div>{{ block.videoBlock.first() }}</div>
 
               {% case "form" %}
+                  {% set option = entry.selectFormType.value %}
+                      {% if option == 'contactUs' %}
+                          {% include 'forms/contactus.html' %}
+
+                      {% if option == 'registrationForm' %}
+                          {% include 'forms/registrationform.html' %}
+
+                      {% if option == 'prayerRequest' %}
+                          {% include 'prayerrequest.html' %}
+
+                      {% endif %}
 
               {% case "audio" %}
                   <audio controls>
