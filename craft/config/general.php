@@ -33,4 +33,7 @@ return array(
 	//Omit index.php in URLs
 	'omitScriptNameInUrls' => true,
 
+	//CSRF Protection
+	'enableCsrfProtection' => true,
+
 );
