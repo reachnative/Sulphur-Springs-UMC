@@ -55,22 +55,6 @@
               {% case "video" %}
                   <div>{{ block.videoBlock.first() }}</div>
 
-              {% case "form" %}
-                  {% set option = entry.selectFormType.value %}
-                      {% if option == 'contactUs' %}
-                          {% include 'forms/contactus.html' %}
-
-                      {% elseif option == 'registrationForm' %}
-                          {% include 'forms/registrationform.html' %}
-
-                      {% elseif option == 'prayerRequest' %}
-                          {% include 'prayerrequest.html' %}
-
-                      {% else %}
-                          <div></div>
-
-                      {% endif %}
-
               {% case "audio" %}
                   <audio controls>
                     <source src="{{ block.audioBlock.first().url }}" type="audio/mpeg">
@@ -81,6 +65,19 @@
                   <p>No content found.</p>
 
           {% endswitch %}
+
+          {% for block in entry.insidePageElements.type %}
+            {% if block.type == 'form' %}
+            {% set option = entry.selectFormType.options %}
+              {% if option.select == 'Contact Us' %}
+                  {% include 'forms/contactus.html' %}
+              {% if option.select == 'Registration Form' %}
+                  {% include 'forms/registrationform.html' %}
+              {% if option.select == 'Prayer Request' %}
+                  {% include 'forms/prayerrequest.html' %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
 
        {% endfor %}
 
