@@ -1,7 +1,9 @@
-<form method="post" action="scripts/send_prayer.php">
-  <input type="text" name="firstname" class="name" placeholder="First Name">
-  <input type="text" name="lastname" class="name" placeholder="Last Name">
-  <input type="email" name="emailaddress" class="emailaddress" placeholder="Email Address">
-  <textarea name="message" placeholder="Message" class="message"></textarea>
-  <input type="submit" name="submit" class="submit" value="submit">
-</form>
+<div class="form_container">
+  <form method="post" action="mailto:{{ mailTo }}">
+    <input type="text" name="firstname" class="name" placeholder="First Name">
+    <input type="text" name="lastname" class="name" placeholder="Last Name">
+    <input type="email" name="emailaddress" class="emailaddress" placeholder="Email Address">
+    <textarea name="message" placeholder="Prayer Request" class="message"></textarea>
+    <input type="submit" name="submit" class="submit" value="submit">
+  </form>
+</div>

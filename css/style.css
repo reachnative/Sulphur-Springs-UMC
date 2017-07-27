@@ -696,6 +696,7 @@ a:hover #belong_block {
 .form_container {
   top: 20px;
   left: 20px;
+  margin-bottom: 30px;
   position: absolute;
 }
 
