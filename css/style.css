@@ -230,6 +230,7 @@ ul li {
 
 .main_nav ul.parent li {
   display: inline-block;
+  pointer-events: inherit;
   float: left;
   position: relative;
   padding-right: 3em;
@@ -698,7 +699,7 @@ a:hover #belong_block {
   position: absolute;
 }
 
-input[type="text"], [type="email"], textarea {
+input.text, input.email, textarea {
   margin-bottom: 20px;
   min-width: 200px;
   display: block;
@@ -709,7 +710,7 @@ input[type="text"], [type="email"], textarea {
   background: -webkit-linear-gradient(bottom, #e3e3e3, #ffffff);
 }
 
-input["text"] {
+input.text {
   font-family:
 }
 
@@ -720,7 +721,7 @@ textarea {
   min-height: 400px;
 }
 
-input[type="submit"] {
+input.submit {
   background-color: #151515;
   padding: 10px 20px;
   border: 0;
@@ -731,7 +732,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
+input.submit:hover {
   background-color: #EB2439;
   cursor: pointer;
 }
@@ -850,10 +851,10 @@ footer {
   position: relative;
   padding-bottom: 20px;
 }
-input[type=email]::placeholder {
+input.mc_email::placeholder  {
   color: #95989A;
 }
-input[type=submit] {
+input.mc_submit {
   padding: 10px;
   font-size: 12px;
   font-weight: 500;
@@ -867,7 +868,7 @@ input[type=submit] {
   position: absolute;
 }
 
-input[type=email] {
+input.mc_email {
   background-color: #ffffff;
   padding:10px;
   border-top-left-radius: 5px;

@@ -6,7 +6,7 @@
       <nav class="main_nav">
           <ul class="parent">
             {% nav parent in parents %}
-            <li>
+            <li id="parent_link">
               {{ parent.getLink() }}
 
               {% if parents.hasDescendants  %}
@@ -42,3 +42,11 @@
     </header>
 
 {% endif %}
+
+<script>
+$.each($("ul > li"), function (index, obj) {
+    if ($(obj).has("ul").length) {
+        $(obj).has("ul").find("a:first").removeAttr("href").css("cursor", "default");
+    }
+});
+</script>

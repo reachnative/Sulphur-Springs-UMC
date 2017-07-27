@@ -1,0 +1,8 @@
+<form>
+  <input type="text" name="firstname" class="name" placeholder="First Name">
+  <input type="text" name="lastname" class="name" placeholder="Last Name">
+  <input type="email" name="emailaddress" class="emailaddress" placeholder="Email Address">
+  <textarea name="message" placeholder="Message" class="message"></textarea>
+  <input type="submit" name="submit" class="submit" value="submit">
+
+</form>

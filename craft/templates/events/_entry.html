@@ -17,14 +17,17 @@
 
 {% block content %}
 
-{% set bg_image = block.coverImageElement.first() %}
+{% if entry.redirectUrl %}
+    {% redirect entry.redirectUrl %}
+{% endif %}
 
-<div class="inside_bg_cover"><img src="{{ bg_image.url }}">
-  <div id="inside_title"><h1>{{ entry.title }}</h1></div><img src="">
-</div>
+{% set bg_image = entry.coverImage.first() %}
 
-<div id="inside_body_container">
-  <div id="body">
+
+
+  <div class="inside_bg_cover"><div id="inside_title"><h1>{{ entry.title }}</h1></div><img src="{{ bg_image.getUrl }}"></div>
+<div id="inside_wrap">
+  <div id="content">
       {% set topLevel = (entry.level == 1) ? entry : entry.getAncestors().level(1).first()  %}
 
         {% if topLevel.hasDescendants %}
@@ -38,12 +41,44 @@
             </ul>
 
        {% endif %}
+  <div class="container">
+      <h2>{{ entry.title }}</h2>
 
-       <h2>{{ entry.title }}</h2>
-       {% set block = block.insidePageElements.first() %}
-       <p></p>
+       {% for block in entry.insidePageElements %}
+          {% switch block.type %}
+              {% case "text" %}
+                  <div>{{ block.textField }}</div>
 
-  </div>
-</div>
+              {% case "image" %}
+                  <div><img src="{{ block.imageBlock.first().url }}"></div>
+
+              {% case "video" %}
+                  <div>{{ block.videoBlock.first() }}</div>
+
+              {% case "form" %}
+
+              {% default %}
+                  <p>No content found.</p>
+
+          {% endswitch %}
+       {% endfor %}
+
+       {% for block in entry.staffDirectory %}
+          {% switch block.type %}
+              {% case "staffMember" %}
+                <div class="staff_member">
+                  <div id="profile"><img src="{{ siteUrl }}{{ block.profile.first().url }}"></div>
+                  <div id="full_name">{{ block.fullName }}</div>
+                  <div id="title"><em>{{ block.jobTitle }}</em></div>
+                  <div id="bio">{{ block.bio }}</div>
+                  <div id="staff_email"><a href="mailto:{{ block.emailAddress }}">{{ block.emailAddress }}</a></div>
+                </div>
+              {% default %}
+                  <p>No content found.</p>
+
+          {% endswitch %}
+       {% endfor %}
+     </div><!-- End .container -->
+   </div><!-- End #content -->
 
 {% endblock %}
