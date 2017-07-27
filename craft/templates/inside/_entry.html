@@ -55,7 +55,7 @@
               {% case "video" %}
                   <div>{{ block.videoBlock.first() }}</div>
 
-              {% case "form" and %}
+              {% case "form" %}
                   {% set option = entry.selectFormType.value %}
                       {% if option == 'contactUs' %}
                           {% include 'forms/contactus.html' %}
