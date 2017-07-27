@@ -1,5 +1,5 @@
 {#
- # Sermons entry template
+ # Belong entry template
  # -------------------
  #
  # This template gets loaded whenever a News entry’s URL is
@@ -14,7 +14,6 @@
  #}
 
 {% extends "_layout" %}
-{% set title = "Sermons" %}
 
 {% block content %}
 
@@ -22,9 +21,9 @@
     {% redirect entry.redirectUrl %}
 {% endif %}
 
-{% for entry in craft.entries.section('sermons').find() %}
-
 {% set bg_image = entry.coverImage.first() %}
+
+
 
   <div class="inside_bg_cover"><div id="inside_title"><h1>{{ entry.title }}</h1></div><img src="{{ bg_image.getUrl }}"></div>
 <div id="inside_wrap">
@@ -82,5 +81,4 @@
      </div><!-- End .container -->
    </div><!-- End #content -->
 
-{% endfor %}
 {% endblock %}
