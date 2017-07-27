@@ -57,6 +57,12 @@
 
               {% case "form" %}
 
+              {% case "audio" %}
+                  <audio controls>
+                    <source src="{{ block.audioBlock.first().url }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+
               {% default %}
                   <p>No content found.</p>
 
