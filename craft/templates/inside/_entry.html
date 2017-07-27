@@ -55,19 +55,6 @@
               {% case "video" %}
                   <div>{{ block.videoBlock.first() }}</div>
 
-              {% case "form" %}
-                  {% set option = entry.selectFormType.value %}
-                      {% if option == 'contactUs' %}
-                          {% include 'forms/contactus.html' %}
-
-                      {% if option == 'registrationForm' %}
-                          {% include 'forms/registrationform.html' %}
-
-                      {% if option == 'prayerRequest' %}
-                          {% include 'prayerrequest.html' %}
-
-                      {% endif %}
-
               {% case "audio" %}
                   <audio controls>
                     <source src="{{ block.audioBlock.first().url }}" type="audio/mpeg">
@@ -78,6 +65,22 @@
                   <p>No content found.</p>
 
           {% endswitch %}
+
+          {% if block.type == 'form' %}
+              {% set option = entry.selectFormType.value %}
+                  {% if option == 'contactUs' %}
+                      {% include 'forms/contactus.html' %}
+
+                  {% elseif option == 'registrationForm' %}
+                      {% include 'forms/registrationform.html' %}
+
+                  {% elseif option == 'prayerRequest' %}
+                      {% include 'prayerrequest.html' %}
+
+                  {% else %}
+                      <div></div>
+                  {% endif %}
+          {% endif %}
        {% endfor %}
 
        {% for block in entry.staffDirectory %}
