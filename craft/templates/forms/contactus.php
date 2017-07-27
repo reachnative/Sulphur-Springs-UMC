@@ -6,25 +6,25 @@ $firstnameErr = $lastnameErr = $emailErr = $messageErr = "";
 $firstname = $lastname = $emailaddress = $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($POST["firstname"]) {
+  if (empty($POST["firstname"])) {
     $nameErr = "First name is required";
 
   } else {
-    $firstname = text_input($_POST["firstname"];
+    $firstname = text_input($_POST["firstname"]);
     //check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$firstname) {
+    if (!preg_match("/^[a-zA-Z ]*$/",$firstname)) {
       $firstnameErr = "Only letters and white space is allowed.";
     }
   }
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($POST["lastname"]) {
+    if (empty($POST["lastname"])) {
       $nameErr = "Last name is required";
 
     } else {
-      $lastname = text_input($_POST["lastname"];
+      $lastname = text_input($_POST["lastname"]);
       //check if name only contains letters and whitespace
-      if (!preg_match("/^[a-zA-Z ]*$/",$lastname) {
+      if (!preg_match("/^[a-zA-Z ]*$/",$lastname)) {
         $lastnameErr = "Only letters and white space is allowed.";
       }
     }
@@ -58,17 +58,6 @@ if ($email) {
 }
 
 $success = mail($to, $subject, $message, $headers);
+echo "Your Message successfully sent. Thank you!";
 
  ?>
-
-<html>
-<body>
-  <?php if (isset($success) && $success) { ?>
-    <h1>Thank You</h1>
-    <p>Your message was sent.</p>
-  <?php } else { ?>
-    <h1>Oops!</h1>
-    <p>Sorry, there seems to be a problem sending your message. Please try again later.</p>
-    <?php } ?>
-</body>
-</html>
