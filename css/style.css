@@ -432,7 +432,7 @@ a #sermons_block {
   min-width: 225px;
   min-height:460px;
   background-color: #151515 !important;
-  background: url(http://dev.sulphurspringsumc.com/images/media/sermon.jpeg);
+  background: url(http://dev.sulphurspringsumc.com/images/media/sermon.jpg);
   background-size: cover;
   overflow: hidden;
   transition: 3s ease-in-out;
@@ -442,7 +442,7 @@ a:hover #sermons_block {
   left: 0;
   top: 0;
   float: left;
-  background: linear-gradient( rgba(21, 21, 21, 0.8), rgba(21, 21, 21, 0.8) ), url(http://dev.sulphurspringsumc.com/images/media/sermon.jpeg);
+  background: linear-gradient( rgba(21, 21, 21, 0.8), rgba(21, 21, 21, 0.8) ), url(http://dev.sulphurspringsumc.com/images/media/sermon.jpg);
   background-color: #151515;
   background-size: cover;
   overflow: hidden;
@@ -528,7 +528,8 @@ a:hover #belong_block {
   overflow: hidden;
 }
 .inside_bg_cover img {
-  margin-top: -400px;
+  margin-top: -150px;
+  margin-left: -200px;
   top: -50px;
   width: 2000px;
   min-width: 80%;
