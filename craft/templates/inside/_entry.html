@@ -56,8 +56,8 @@
                   <div>{{ block.videoBlock.first() }}</div>
 
               {% case "form"%}
-
-                  {% for option in entry.selectFormType.value %}
+                  {% set dropdownValue = entry.selectFormType.value %}
+                  {% for option in dropdownValue %}
                       {% if option.selected == 'contactUs' %}
                         {% include 'forms/contactus.html' %}
 
