@@ -700,6 +700,10 @@ a:hover #belong_block {
   position: absolute;
 }
 
+form {
+  margin-bottom: 40px;
+}
+
 input.text, input.email, textarea {
   margin-bottom: 20px;
   min-width: 200px;
