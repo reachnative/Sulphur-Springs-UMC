@@ -57,13 +57,13 @@
 
               {% case "form"%}
                   {% set dropdownValue = block.selectFormType.value %}
-                      {% if option.selected == 'contactUs' %}
+                      {% if dropdownValue == 'contactUs' %}
                         {% include 'forms/contactus.html' %}
 
-                      {% elseif option.selected == 'registrationForm' %}
+                      {% elseif dropdownValue == 'registrationForm' %}
                         {% include 'forms/registrationform.html' %}
 
-                      {% elseif option.selected == 'prayerRequest' %}
+                      {% elseif dropdownValue == 'prayerRequest' %}
                         {% include 'forms/prayerrequest.html' %}
                       {% else %}
                         <div></div>
