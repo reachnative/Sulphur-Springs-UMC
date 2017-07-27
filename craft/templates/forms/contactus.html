@@ -8,23 +8,3 @@
     <input type="submit" name="submit" class="submit" value="submit">
   </form>
 </div>
-
-<script>
-$("#contact").submit(function() {
-
-  var url = "/scripts/contactus.php"; //the script to handle the form input.
-
-  $.ajax({
-        type: "POST",
-        url: url,
-        //serialize your form's elements.
-        data: $("#contact").serialize(),
-        success: function(data)
-        {
-            //class of the form wrapper
-            $('.form_container').html(data);
-        }
-  });
-  return false;
-})
-</script>
