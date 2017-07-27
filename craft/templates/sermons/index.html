@@ -1,27 +1,83 @@
 {#
- # News index template
+ # News entry template
  # -------------------
  #
- # This template is loaded whenever http://example.com/news is
- # requested, because it is located at news/index.html in your
- # craft/templates/ folder.
+ # This template gets loaded whenever a News entry’s URL is
+ # requested. That’s because the News section’s Template setting is
+ # set to “news/_entry”, the path to this template.
+ #
+ # When this template is loaded, it will already have an ‘entry’
+ # variable, set to the requested News entry.
  #
  # See this page for more details on how Craft routes requests:
  # http://craftcms.com/docs/routing
  #}
 
 {% extends "_layout" %}
-{% set title = "News" %}
+{% set title = "Sermons" %}
 
 {% block content %}
-	<h1>News</h1>
 
-	{% for entry in craft.entries.section('news').find() %}
-		<article>
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-			{{ entry.body.getPage(1) }}
-			<p><a href="{{ entry.url }}">Continue reading</a></p>
-		</article>
-	{% endfor %}
+{% if entry.redirectUrl %}
+    {% redirect entry.redirectUrl %}
+{% endif %}
+
+{% set bg_image = entry.coverImage.first() %}
+
+  <div class="inside_bg_cover"><div id="inside_title"><h1>{{ entry.title }}</h1></div><img src="{{ bg_image.getUrl }}"></div>
+<div id="inside_wrap">
+  <div id="content">
+      {% set topLevel = (entry.level == 1) ? entry : entry.getAncestors().level(1).first()  %}
+
+        {% if topLevel.hasDescendants %}
+
+            {% set subnav =  topLevel.getDescendants()  %}
+
+            <ul class="crumbs">
+              {% nav page in subnav  %}
+              <li><a href="{{ page.url }}">{{page}}</a></li>
+              {% endnav %}
+            </ul>
+
+       {% endif %}
+  <div class="container">
+      <h2>{{ entry.title }}</h2>
+
+       {% for block in entry.insidePageElements %}
+          {% switch block.type %}
+              {% case "text" %}
+                  <div>{{ block.textField }}</div>
+
+              {% case "image" %}
+                  <div><img src="{{ block.imageBlock.first().url }}"></div>
+
+              {% case "video" %}
+                  <div>{{ block.videoBlock.first() }}</div>
+
+              {% case "form" %}
+
+              {% default %}
+                  <p>No content found.</p>
+
+          {% endswitch %}
+       {% endfor %}
+
+       {% for block in entry.staffDirectory %}
+          {% switch block.type %}
+              {% case "staffMember" %}
+                <div class="staff_member">
+                  <div id="profile"><img src="{{ siteUrl }}{{ block.profile.first().url }}"></div>
+                  <div id="full_name">{{ block.fullName }}</div>
+                  <div id="title"><em>{{ block.jobTitle }}</em></div>
+                  <div id="bio">{{ block.bio }}</div>
+                  <div id="staff_email"><a href="mailto:{{ block.emailAddress }}">{{ block.emailAddress }}</a></div>
+                </div>
+              {% default %}
+                  <p>No content found.</p>
+
+          {% endswitch %}
+       {% endfor %}
+     </div><!-- End .container -->
+   </div><!-- End #content -->
+
 {% endblock %}
