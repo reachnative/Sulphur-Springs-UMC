@@ -704,7 +704,7 @@ form {
   margin-bottom: 40px;
 }
 
-input.text, input.email, textarea {
+input.name, input.emailaddress, textarea.message {
   margin-bottom: 20px;
   min-width: 200px;
   display: block;
@@ -715,11 +715,7 @@ input.text, input.email, textarea {
   background: -webkit-linear-gradient(bottom, #e3e3e3, #ffffff);
 }
 
-input.text {
-  font-family:
-}
-
-textarea {
+textarea.message {
   top: 0;
   width: 400px;
   height: auto;
