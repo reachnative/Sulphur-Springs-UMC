@@ -2,7 +2,11 @@
 if(isset($_POST['emailaddress'])) {
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $to = "cowens@reachnative.com";
+    ?>
+    {% set block = entry.insidePageElements %}
+    {% set mailTo = block.mailTo %}
+    <?php
+    $to = "{{ mailTo }}";
     $subject = "New Message from Contact Page";
 
     function died($error) {
