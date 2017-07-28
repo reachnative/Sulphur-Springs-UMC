@@ -2,8 +2,8 @@
 if(isset($_POST['emailaddress'])) {
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "cowens@reachnative.com";
-    $email_subject = "New Message from Contact Page";
+    $to = "cowens@reachnative.com";
+    $subject = "New Message from Contact Page";
 
     function died($error) {
         // your error code can go here
@@ -55,7 +55,7 @@ if(isset($_POST['emailaddress'])) {
     died($error_message);
   }
 
-    $email_message = "A new submission from Contact Us has been submitted. Here are the details:\n\n";
+    $message = "A new submission from Contact Us has been submitted. Here are the details:\n\n";
 
 
     function clean_string($string) {
@@ -65,16 +65,16 @@ if(isset($_POST['emailaddress'])) {
 
 
 
-    $email_message .= "First Name: ".clean_string($first_name)."\n";
-    $email_message .= "Last Name: ".clean_string($last_name)."\n";
-    $email_message .= "Email: ".clean_string($email_from)."\n";
-    $email_message .= "Message: ".clean_string($comments)."\n";
+    $message .= "First Name: ".clean_string($first_name)."\n";
+    $message .= "Last Name: ".clean_string($last_name)."\n";
+    $message .= "Email: ".clean_string($email_from)."\n";
+    $message .= "Message: ".clean_string($comments)."\n";
 
 // create email headers
 $headers = 'From: '.$email_from."\r\n".
 'Reply-To: '.$email_from."\r\n";
 
-mail($email_to, $email_subject, $email_message, $headers);
+mail($to, $subject, $message, $headers);
 ?>
 
 <!-- include your own success html here -->
