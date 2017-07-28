@@ -64,15 +64,17 @@ if(isset($_POST['emailaddress'])) {
     }
 
 
-
+    $message .= include('contactusmessage.php');
     $message .= "First Name: ".clean_string($first_name)."\n";
     $message .= "Last Name: ".clean_string($last_name)."\n";
     $message .= "Email: ".clean_string($email_from)."\n";
     $message .= "Message: ".clean_string($comments)."\n";
 
 // create email headers
-$headers = 'From: debbie@sulphurspringsumc.com' . '\r\n' .
+$headers = 'From: Sulphur Springs United Methodist Church <debbie@sulphurspringsumc.com>' . '\r\n' .
 'Reply-To: debbie@sulphurspringsumc.com'. "\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
 mail($to, $subject, $message, $headers);
 ?>
