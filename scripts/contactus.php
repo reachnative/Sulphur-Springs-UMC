@@ -71,8 +71,8 @@ if(isset($_POST['emailaddress'])) {
     $message .= "Message: ".clean_string($comments)."\n";
 
 // create email headers
-$headers = 'From: '.$email_from."\r\n".
-'Reply-To: '.$email_from."\r\n";
+$headers = 'From: debbie@sulphurspringsumc.com' . '\r\n' .
+'Reply-To: debbie@sulphurspringsumc.com'. "\r\n";
 
 mail($to, $subject, $message, $headers);
 ?>
