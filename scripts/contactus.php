@@ -3,7 +3,8 @@ if(isset($_POST['emailaddress'])) {
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
 
-    $to =  " ?>{{ mailTo }} <?php ";
+
+    $to = require('{{ siteUrl }}scripts/contactusinfo.php');
     $subject = "New Message from Contact Page";
 
     function died($error) {
