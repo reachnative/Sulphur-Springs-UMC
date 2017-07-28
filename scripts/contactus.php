@@ -79,4 +79,5 @@ if (mail($to, $subject, $message, $headers)) {
     } else {
       echo "<script>alert('Mail was not sent. Please try again later');</script>";
     }
+  }
 ?>
