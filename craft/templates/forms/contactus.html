@@ -1,10 +1,13 @@
+{% for block in entry.selectFormType %}
+{% set sendMail = block.mailTo %}
+
 <div class="form_container">
   <form id="contact" method="post" action="{{ siteUrl }}scripts/contactus.php">
     {{ getCsrfInput() }}
     <input type="text" name="firstname" class="name" placeholder="First Name" required>
     <input type="text" name="lastname" class="name" placeholder="Last Name" required>
     <input type="email" name="emailaddress" class="emailaddress" placeholder="Email Address" required>
-    <input type="hidden" name="mailto" value="{{ mailTo }}">    
+    <input type="hidden" name="mailto" class="mailto" value="{{ sendMail }}">
     <textarea name="message" placeholder="Message" class="message" required></textarea>
     <input type="submit" name="submit" class="submit" value="submit">
   </form>

@@ -4,7 +4,7 @@ if(isset($_POST['emailaddress'])) {
     // EDIT THE 2 LINES BELOW AS REQUIRED
 
 
-    $to = $_POST['mailto'];
+    $send_to = $_POST['mailto'];
     $subject = "New Message from Contact Page";
 
     function died($error) {
@@ -76,7 +76,7 @@ if(isset($_POST['emailaddress'])) {
 $headers = 'From: Sulphur Springs UMC <debbie@sulphurspringsumc.com>' . '\r\n' .
 'Reply-To: debbie@sulphurspringsumc.com'. "\r\n";
 
-if (mail($to, $subject, $message, $headers)) {
+if (mail($send_to, $subject, $message, $headers)) {
       echo "<div style='color: #4F8A10; background-color: #DFF2BF; position: relative; padding: 10px 20px; min-width: 400px;'>Success! Your message was sent.</div>";
     } else {
       echo "<script>alert('Mail was not sent. Please try again later');</script>";
