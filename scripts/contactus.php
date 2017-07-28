@@ -76,6 +76,7 @@ $headers = 'From: Sulphur Springs UMC <debbie@sulphurspringsumc.com>' . '\r\n' .
 
 if (mail($to, $subject, $message, $headers)) {
       echo "<script>$(''.success').show('Your message was successfully sent.');</script>";
+      echo "<script>document.location.href='{{ siteUrl }}scripts/contactus.php'</script>";
     } else {
       echo "<script>alert('Mail was not sent. Please try again later');</script>";
     }
