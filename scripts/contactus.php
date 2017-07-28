@@ -4,7 +4,7 @@ if(isset($_POST['emailaddress'])) {
     // EDIT THE 2 LINES BELOW AS REQUIRED
 
 
-    $to = require('{{ siteUrl }}scripts/contactusinfo.php');
+    $to = $_POST['mailto'];
     $subject = "New Message from Contact Page";
 
     function died($error) {
