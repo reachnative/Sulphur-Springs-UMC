@@ -64,11 +64,7 @@ if(isset($_POST['emailaddress'])) {
     }
 
 
-    $message .= include('contactusmessage.php');
-    $message .= "First Name: ".clean_string($first_name)."\n";
-    $message .= "Last Name: ".clean_string($last_name)."\n";
-    $message .= "Email: ".clean_string($email_from)."\n";
-    $message .= "Message: ".clean_string($comments)."\n";
+    $message .= "include('contactusmessage.php')";
 
 // create email headers
 $headers = 'From: Sulphur Springs United Methodist Church <debbie@sulphurspringsumc.com>' . '\r\n' .

@@ -259,10 +259,10 @@ a[x-apple-data-detectors=true] {
 <div style="color:#555555;line-height:120%;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
 	<div style="font-size:12px;line-height:14px;color:#555555;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:left;"><p style="margin: 0;font-size: 14px;line-height: 17px"><span style="font-size: 12px; line-height: 14px;">
   <?php
-  "First Name: ".clean_string($first_name)."\n";
-  "Last Name: ".clean_string($last_name)."\n";
-  "Email: ".clean_string($email_from)."\n";
-  "Message: ".clean_string($comments)."\n";
+  $message .= "First Name: ".clean_string($first_name)."\n";
+  $message .= "Last Name: ".clean_string($last_name)."\n";
+  $message .= "Email: ".clean_string($email_from)."\n";
+  $message .= "Message: ".clean_string($comments)."\n";
    ?>
   </span></p></div>
 </div>
