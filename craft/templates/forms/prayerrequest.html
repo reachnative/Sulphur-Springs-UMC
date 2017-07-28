@@ -1,9 +1,23 @@
+{% set sendTo = block.mailTo %}
+<link rel="stylesheet" href="{{ siteUrl }}css/forms.css">
 <div class="form_container">
-  <form method="post" action="mailto:{{ mailTo }}">
-    <input type="text" name="firstname" class="name" placeholder="First Name" required>
-    <input type="text" name="lastname" class="name" placeholder="Last Name" required>
-    <input type="email" name="emailaddress" class="emailaddress" placeholder="Email Address" required>
-    <textarea name="message" placeholder="Prayer Request" class="message" required></textarea>
-    <input type="submit" name="submit" class="submit" value="submit">
+  <div id="form-messages"></div>
+  <form id="ajax-prayer-request" method="post" action="{{ siteUrl }}scripts/prayer_request.php">
+      <div class="field">
+          <input type="text" id="name" name="name" placeholder="Full Name" required>
+      </div>
+
+      <div class="field">
+          <input type="email" id="email" name="emailaddress" placeholder="Email Address" required>
+      </div>
+
+      <div class="field">
+          <textarea id="message" name="message" placeholder="Prayer Request" required></textarea>
+      </div>
+
+      <div class="field">
+          <input type="hidden" name="mailto" class="mailto" value="{{ sendTo }}">
+          <button type="submit">Send</button>
+      </div>
   </form>
 </div>
