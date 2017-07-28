@@ -1,5 +1,5 @@
 {% for block in entry.selectFormType %}
-{% set sendMail = block.mailTo %}
+  {% set sendMail = block.mailTo %}
 
 <div class="form_container">
   <form id="contact" method="post" action="{{ siteUrl }}scripts/contactus.php">
@@ -12,3 +12,4 @@
     <input type="submit" name="submit" class="submit" value="submit">
   </form>
 </div>
+{% endfor %}
