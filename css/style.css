@@ -528,11 +528,12 @@ a:hover #belong_block {
   overflow: hidden;
 }
 .inside_bg_cover img {
-  margin-top: -150px;
-  margin-left: -200px;
-  top: -50px;
-  width: 2000px;
-  min-width: 80%;
+  margin-top: -110px;
+  margin-left: 0;
+  top: 0;
+  width: 100%;
+  min-width: 500px;
+  min-height: 300px;
   height: auto;
   background-size: 100%;
   opacity: .4;
