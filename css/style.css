@@ -780,6 +780,12 @@ input.submit:hover {
   cursor: pointer;
 }
 
+.success {
+color: #4F8A10;
+background-color: #DFF2BF;
+display: hide;
+}
+
 /* Footer Section
 ======================*/
 footer {
