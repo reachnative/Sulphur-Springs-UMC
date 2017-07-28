@@ -1,3 +1,5 @@
+{% set block = entry.insidePageElements %}
+{% set mailTo = block.mailTo %}
 <div class="form_container">
   <form id="contact" method="post" action="{{ siteUrl }}scripts/contactus.php">
     {{ getCsrfInput() }}
