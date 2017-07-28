@@ -2,8 +2,6 @@
 if(isset($_POST['emailaddress'])) {
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    {% set block = entry.insidePageElements %}
-    {% set mailTo = block.mailTo %}
     
     $to = "{{ mailTo }}";
     $subject = "New Message from Contact Page";
