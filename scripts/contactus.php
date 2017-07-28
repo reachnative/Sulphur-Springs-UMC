@@ -2,8 +2,8 @@
 if(isset($_POST['emailaddress'])) {
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    
-    $to = "{{ mailTo }}";
+
+    $to =  ?>"{{ mailTo }}"<?php ;
     $subject = "New Message from Contact Page";
 
     function died($error) {
