@@ -1,12 +1,23 @@
 {% set sendTo = block.mailTo %}
+<link rel="stylesheet" href="{{ siteUrl }}css/forms.css">
 <div class="form_container">
-  <form id="contact" method="post" action="{{ siteUrl }}scripts/contactus.php">
-    {{ getCsrfInput() }}
-    <input type="text" name="firstname" class="name" placeholder="First Name" required>
-    <input type="text" name="lastname" class="name" placeholder="Last Name" required>
-    <input type="email" name="emailaddress" class="emailaddress" placeholder="Email Address" required>
-    <input type="hidden" name="mailto" class="mailto" value="{{ sendTo }}">
-    <textarea name="message" placeholder="Message" class="message" required></textarea>
-    <input type="submit" name="submit" class="submit" value="submit">
+  <div id="form-messages"></div>
+  <form id="ajax-contact" method="post" action="{{ siteUrl }}scripts/contact.php">
+      <div class="field">
+          <input type="text" id="name" name="name" placeholder="Full Name" required>
+      </div>
+
+      <div class="field">
+          <input type="email" id="email" name="emailaddress" placeholder="Email Address" required>
+      </div>
+
+      <div class="field">
+          <textarea id="message" name="message" placeholder="Comments" required></textarea>
+      </div>
+
+      <div class="field">
+          <input type="hidden" name="mailto" class="mailto" value="{{ sendTo }}">
+          <button name="submit" type="submit">Send</button>
+      </div>
   </form>
 </div>
