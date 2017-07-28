@@ -2,7 +2,7 @@
 if(isset($_POST['emailaddress'])) {
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "{{ mailTo }}";
+    $email_to = "cowens@reachnative.com";
     $email_subject = "New Message from Contact Page";
 
     function died($error) {
