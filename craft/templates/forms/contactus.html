@@ -1,4 +1,4 @@
-{% set sendTo == block.mailTo %}
+{% set sendTo = block.mailTo %}
 <div class="form_container">
   <form id="contact" method="post" action="{{ siteUrl }}scripts/contactus.php">
     {{ getCsrfInput() }}
