@@ -74,15 +74,9 @@ if(isset($_POST['emailaddress'])) {
 $headers = 'From: Sulphur Springs UMC <debbie@sulphurspringsumc.com>' . '\r\n' .
 'Reply-To: debbie@sulphurspringsumc.com'. "\r\n";
 
-if (mail($to, $subject, $message, $headers))
-{
+if (mail($to, $subject, $message, $headers)) {
       echo "<script>$(''.success').show('Your message was successfully sent.');</script>";
-      }
-      else
-      {
+    } else {
       echo "<script>alert('Mail was not sent. Please try again later');</script>";
-      }
-     }
-
-}
+    }
 ?>
