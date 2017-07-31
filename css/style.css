@@ -73,7 +73,12 @@ ul li {
 }
 
 #header_inside {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 130px;
   background-color: #EB2439;
+  z-index: 1;
 }
 
 .main_logo_white {
@@ -91,20 +96,29 @@ ul li {
 
 .main_nav_inside {
   margin: 0 auto;
-  margin-top: -130px;
+  right: 0;
+  margin-top: -126px;
   position: relative;
   z-index: 1;
 }
 
-.main_nav_inside ul {
+.main_nav_inside  ul {
+  position: absolute;
   list-style-type: none;
   margin: 0;
-  float: right;
+  right: 0;
+  height: 130px;
 }
 
-.main_nav_inside ul li {
+.main_nav_inside  ul.parent li {
   display: inline-block;
-  float: left;
+  pointer-events: inherit;
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 51px;
+  padding-bottom: 53px;
+  text-align: center;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -112,55 +126,12 @@ ul li {
 
 }
 
-.main_nav_inside ul li a {
-  display: block;
-  top: 0;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 50px;
-  height: 75px;
+.main_nav_inside  ul li a {
   color: #ffffff;
-  position: relative;
+  z-index: 5;
 }
-
-.main_nav_inside ul li a:hover {
-  width: auto;
+.main_nav_inside ul li:hover {
   background-color: #2F2F2F;
-}
-.main_nav_inside ul li a:after {
-  height: 100px;
-}
-
-.main_nav_inside ul li:first-child a:hover::after {
-  top: 100%;
-	left: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  font-size: 0;
-	line-height: 0;
-	content: " ";
-	position: absolute;
-	border-top: 30px solid #232323;
-  border-left: 58px solid rgba(0, 0, 0, 0);
-  border-right: 58px solid rgba(0, 0, 0, 0);
-  overflow: hidden;
-}
-
-.main_nav_inside ul li a:hover:after {
-  top: 100%;
-	left: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  font-size: 0;
-	line-height: 0;
-	content: " ";
-	position: absolute;
-	border-top: 30px solid #232323;
-  border-left: 68px solid rgba(0, 0, 0, 0);
-  border-right: 68px solid rgba(0, 0, 0, 0);
-  overflow: hidden;
 }
 
 .main_nav_inside ul li.active a {
@@ -195,9 +166,51 @@ ul li {
 	content: " ";
 	position: absolute;
 	border-top: 30px solid #232323;
-  border-left: 68px solid rgba(0, 0, 0, 0);
+  border-left: 68fpx solid rgba(0, 0, 0, 0);
   border-right: 68px solid rgba(0, 0, 0, 0);
   overflow: hidden;
+}
+
+ul.parent li ul.inside_dropdown li {
+  display: none;
+  z-index: 3;
+}
+.main_nav_inside ul.parent li:hover ul.inside_dropdown {
+  margin-top: 42px;
+  z-index: 2 !important;
+  display: block !important;
+}
+
+.main_nav_inside ul.parent li:hover ul.inside_dropdown li {
+  display: block !important;
+  top: 42px;
+  list-style-type: none;
+  min-width: 200px;
+  text-align: left;
+  top: 11px !important;
+  margin-left: -92px;
+  position: relative;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 8px;
+  padding: 15px 10px;
+  background-color: #151515;
+  top: 38px;
+  height: auto;
+  z-index: 2 !important;
+  color: #ffffff;
+  float: left;
+  clear: left;
+}
+
+.main_nav_inside ul li:hover ul.inside_dropdown li:hover > a {
+  border-bottom: 2px solid #EB2439;
+  line-height: 8px;
+}
+
+.main_nav_inside ul li:hover ul.inside_dropdown li a:hover {
+  border-bottom: 2px solid #EB2439;
+  line-height: 8px;
 }
 
 .main_logo {
@@ -521,19 +534,27 @@ a:hover #belong_block {
 
 /* Inside Pages
 ===============*/
-.inside_bg_cover {
+.inside_cover {
+  position: relative;
+  margin-top: 130px;
   width: 100%;
   height: 300px;
-  background-color: rgba(21, 21, 21, 1);
   overflow: hidden;
 }
-.inside_bg_cover img {
-  margin-top: -110px;
-  margin-left: 0;
-  top: 0;
+.inside_bg_cover {
+  position: relative;
+  margin-top: 0;
   width: 100%;
-  min-width: 500px;
-  min-height: 300px;
+  height: 400px;
+  background-color: rgba(21, 21, 21, 1);
+  overflow: hidden;
+  z-index: -1;
+}
+.inside_bg_cover  img {
+  margin-left: -200px;
+  top: 0;
+  width: 2000px;
+  min-width: 80%;
   height: auto;
   background-size: 100%;
   opacity: .4;
@@ -544,7 +565,7 @@ a:hover #belong_block {
 
 #inside_title h1{
   top: 1.5em;
-  position: relative;
+  position: absolute;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -552,7 +573,6 @@ a:hover #belong_block {
   font-size: 4em;
   padding-bottom: 30px;
   color: #ffffff;
-  z-index: 20 !important;
 }
 
 #inside_wrap {
@@ -632,8 +652,10 @@ a:hover #belong_block {
 .container h2 {
   top: -30px;
   margin: 0;
+  display: block;
   position: relative;
   clear: both;
+  z-index:2 !important;
 }
 
 .discover_box {
