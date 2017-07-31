@@ -134,43 +134,6 @@ ul li {
   background-color: #2F2F2F;
 }
 
-.main_nav_inside ul li.active a {
-  width: auto;
-  background-color: #2F2F2F;
-}
-
-.main_nav_inside ul li:first-child.active a:after {
-  top: 100%;
-	left: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  font-size: 0;
-	line-height: 0;
-	content: " ";
-	position: absolute;
-	border-top: 30px solid #232323;
-  border-left: 58px solid rgba(0, 0, 0, 0);
-  border-right: 58px solid rgba(0, 0, 0, 0);
-  overflow: hidden;
-}
-
-.main_nav_inside ul li.active a:after {
-  top: 100%;
-	left: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  font-size: 0;
-	line-height: 0;
-	content: " ";
-	position: absolute;
-	border-top: 30px solid #232323;
-  border-left: 68fpx solid rgba(0, 0, 0, 0);
-  border-right: 68px solid rgba(0, 0, 0, 0);
-  overflow: hidden;
-}
-
 ul.parent li ul.inside_dropdown li {
   display: none;
   z-index: 3;
