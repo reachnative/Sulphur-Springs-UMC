@@ -24,22 +24,9 @@
 
 {% set bg_image = entry.coverImage.first() %}
 
-<div class="inside_cover"><div id="inside_title"><h1>{{ entry.title }}</h1></div><div class="inside_bg_cover"><img src="{{ bg_image.getUrl }}"></div></div>
+<div class="inside_cover"><div id="inside_title"><h1>Events</h1></div><div class="inside_bg_cover"><img src="{{ bg_image.getUrl }}"></div></div>
 <div id="inside_wrap">
   <div id="content">
-      {% set topLevel = (entry.level == 1) ? entry : entry.getAncestors().level(1).first()  %}
-
-        {% if topLevel.hasDescendants %}
-
-            {% set subnav =  topLevel.getDescendants()  %}
-
-            <ul class="crumbs">
-              {% nav page in subnav  %}
-              <li><a href="{{ page.url }}">{{page}}</a></li>
-              {% endnav %}
-            </ul>
-
-       {% endif %}
   <div class="container">
       <h2>Events</h2>
       <div>No events.</div>

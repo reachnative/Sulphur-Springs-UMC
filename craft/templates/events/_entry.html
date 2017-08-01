@@ -20,13 +20,14 @@
 
 {% set bg_image = block.coverImageElement.first() %}
 
-<div class="inside_cover"><div id="inside_title"><h1>{{ entry.title }}</h1></div><div class="inside_bg_cover"><img src="{{ bg_image.getUrl }}"></div></div>
+<div class="inside_cover"><div id="inside_title"><h1>Events</h1></div><div class="inside_bg_cover"><img src="{{ bg_image.getUrl }}"></div></div>
 
 <div id="inside_body_container">
   <div id="body">
 
        <h2>Events</h2>
        {% set block = block.insidePageElements.first() %}
+       
        <p>Coming Soon.</p>
 
   </div>
