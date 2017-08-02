@@ -39,7 +39,7 @@
   <div class="container">
       <h2>Sermons</h2>
 
-      {% if craft.entries.section('events') | length %}
+      {% if craft.entries.section('sermons') | length %}
       {% set pages = craft.entries.section('sermons') %}
         {% for page in pages %}
           <h3>{{ page.sermonTitle }}</h3><br>
