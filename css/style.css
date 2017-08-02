@@ -144,13 +144,14 @@ ul.parent li ul.inside_dropdown li {
   display: block !important;
 }
 
-.main_nav_inside ul.parent li:hover ul.inside_dropdown li a {
+.main_nav_inside ul.parent li:hover ul.inside_dropdown li {
   display: block !important;
   top: 42px;
   list-style-type: none;
   min-width: 200px;
   text-align: left;
   top: 11px !important;
+  margin-left: -92px;
   position: relative;
   font-weight: 400;
   font-size: 14px;
