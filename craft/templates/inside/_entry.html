@@ -84,6 +84,8 @@
                     <source src="{{ block.audioBlock.first().url }}" type="audio/mpeg">
                     Your browser does not support the audio element.
                   </audio>
+              {% case "pdf" %}
+                  <div>{{ block.pdfBlock.first() }}</div>
 
               {% default %}
                   <p>No content found.</p>
