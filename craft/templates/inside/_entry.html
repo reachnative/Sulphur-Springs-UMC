@@ -84,8 +84,9 @@
                     <source src="{{ block.audioBlock.first().url }}" type="audio/mpeg">
                     Your browser does not support the audio element.
                   </audio>
+                  
               {% case "pdf" %}
-                  <div><img src="{{ siteUrl }}images/pdf_icon_24x24.png"><a href="{{ block.pdfBlock.first().url }}">{{ block.pdfBlock }}</a></div>
+                  <div><img src="{{ siteUrl }}images/pdf_icon_24x24.png"><a href="{{ block.pdfBlock.url}}">{{ block.pdfBlock }}</a></div>
 
               {% default %}
                   <p>No content found.</p>
