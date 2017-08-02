@@ -86,7 +86,7 @@
                   </audio>
 
               {% case "pdf" %}
-                  <div><img src="{{ siteUrl }}images/pdf_icon_24x24.png">{{ block.pdfBlock.first().url }}</div>
+                  <div><img style="width: 24px; height: 24px;" src="{{ siteUrl }}images/pdf_icon_24x24.png"><a href="{{ block.pdfBlock.first().url }}">{{ block.pdfTitle }}</a></div>
 
               {% default %}
                   <p>No content found.</p>
