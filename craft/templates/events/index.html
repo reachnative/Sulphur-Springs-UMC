@@ -27,9 +27,30 @@
 <div class="inside_cover"><div id="inside_title"><h1>Events</h1></div><div class="inside_bg_cover"><img src="{{ bg_image.getUrl }}"></div></div>
 <div id="inside_wrap">
   <div id="content">
+    <div class="discover_box">
+      <h1>Discover More</h1>
+      <ul>
+        <li><a href="{{ siteUrl }}sermons">Sermons</a></li>
+        <li><a href="{{ siteUrl }}events">Events</a></li>
+        <li><a href="{{ siteUrl }}serve">Serve</a></li>
+        <li><a href="{{ siteUrl }}belong">Belong</a></li>
+      </ul>
+    </div>
   <div class="container">
       <h2>Events</h2>
-      <div>No events.</div>
+
+      {% if craft.entries.section('events') | length %}
+        {% for page in craft.entries.section('events').order('startDate') %}
+          <h3>{{ page.eventTitle }}</h3><br>
+          <div>{{ page.eventDescription }}</div><br>
+          <div>{{ page.startDate | date("M d, Y") }} {% if page.endDate %} - {{ page.endDate | date("M d, Y") }}{% endif %}</div><br>
+          <div>{{ page.startTime.localeTime() }} {% if page.endTime %} - {{ page.endTime.localeTime() }}{% endif %}</div><br><br>
+          <div style="width: 100%; position: relative; border: 1px solid #e3e3e3;"></div>
+        {% endfor %}
+
+      {% else %}
+          <div>No events.</div>
+      {% endif %}
      </div><!-- End .container -->
    </div><!-- End #content -->
 

@@ -14,7 +14,7 @@
  #}
 
 {% extends "_layout" %}
-{% set title = "Sermons" %}
+{% set title = "Events" %}
 
 {% block content %}
 
@@ -24,13 +24,38 @@
 
 {% set bg_image = entry.coverImage.first() %}
 
-<div class="inside_cover"><div id="inside_title"><h1>Sermons</h1></div><div class="inside_bg_cover"><img src="http://dev.sulphurspringsumc.com/images/media/sermon_index.jpg"></div></div>
+<div class="inside_cover"><div id="inside_title"><h1>Sermons</h1></div><div class="inside_bg_cover"><img src="{{ bg_image.getUrl }}"></div></div>
 <div id="inside_wrap">
   <div id="content">
-
+    <div class="discover_box">
+      <h1>Discover More</h1>
+      <ul>
+        <li><a href="{{ siteUrl }}sermons">Sermons</a></li>
+        <li><a href="{{ siteUrl }}events">Events</a></li>
+        <li><a href="{{ siteUrl }}serve">Serve</a></li>
+        <li><a href="{{ siteUrl }}belong">Belong</a></li>
+      </ul>
+    </div>
   <div class="container">
       <h2>Sermons</h2>
-      <div>This page is coming soon.</div>
+
+      {% if craft.entries.section('events') | length %}
+      {% set pages = craft.entries.section('sermons') %}
+        {% for page in pages %}
+          <h3>{{ page.sermonTitle }}</h3><br>
+          <div>{{ page.sermonDate | date("M d, Y") }}</div><br>
+          {% set asset = page.sermonAudio.first() %}
+          {% if asset %}
+            <audio controls><source src="{{ asset.getUrl() }}" type="audio/mpeg"></audio><br><br>
+          {% endif %}
+              {% if craft.entries.section('sermons') | length > 1 %}
+                <div style="width: 100%; position: relative; border: 1px solid #e3e3e3;"></div>
+              {% endif %}
+        {% endfor %}
+
+      {% else %}
+          <div>No sermons.</div>
+      {% endif %}
      </div><!-- End .container -->
    </div><!-- End #content -->
 

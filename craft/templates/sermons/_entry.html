@@ -1,5 +1,5 @@
 {#
- # Sermons entry template
+ # News entry template
  # -------------------
  #
  # This template gets loaded whenever a News entry’s URL is
@@ -14,7 +14,7 @@
  #}
 
 {% extends "_layout" %}
-{% set title = "Sermons" %}
+{% set title = "Events" %}
 
 {% block content %}
 
@@ -22,52 +22,37 @@
     {% redirect entry.redirectUrl %}
 {% endif %}
 
-{% for entry in craft.entries.section('sermons').find() %}
-
 {% set bg_image = entry.coverImage.first() %}
 
-<div class="inside_cover"><div id="inside_title"><h1>{{ entry.title }}</h1></div><div class="inside_bg_cover"><img src="{{ bg_image.getUrl }}"></div></div>
+<div class="inside_cover"><div id="inside_title"><h1>Sermons</h1></div><div class="inside_bg_cover"><img src="{{ bg_image.getUrl }}"></div></div>
 <div id="inside_wrap">
   <div id="content">
+    <div class="discover_box">
+      <h1>Discover More</h1>
+      <ul>
+        <li><a href="{{ siteUrl }}sermons">Sermons</a></li>
+        <li><a href="{{ siteUrl }}events">Events</a></li>
+        <li><a href="{{ siteUrl }}serve">Serve</a></li>
+        <li><a href="{{ siteUrl }}belong">Belong</a></li>
+      </ul>
+    </div>
   <div class="container">
-      <h2>{{ entry.title }}</h2>
+      <h2>Sermons</h2>
 
-       {% for block in entry.insidePageElements %}
-          {% switch block.type %}
-              {% case "text" %}
-                  <div>{{ block.textField }}</div>
+      {% if craft.entries.section('events') | length %}
+        {% for page in craft.entries.section('sermons') %}
+          <h3>{{ page.sermonTitle }}</h3><br>
+          <div>{{ page.eventDescription }}</div><br>
+          <div>{{ page.sermonDate | date("M d, Y") }}</div><br>
+              {% if craft.entries.section('sermons') | length > 1 %}
+                <div style="width: 100%; position: relative; border: 1px solid #e3e3e3;"></div>
+              {% endif %}
+        {% endfor %}
 
-              {% case "image" %}
-                  <div><img src="{{ block.imageBlock.first().url }}"></div>
-
-              {% case "video" %}
-                  <div>{{ block.videoBlock.first() }}</div>
-
-              {% case "form" %}
-
-              {% default %}
-                  <p>No content found.</p>
-
-          {% endswitch %}
-       {% endfor %}
-
-       {% for block in entry.staffDirectory %}
-          {% switch block.type %}
-              {% case "staffMember" %}
-                <div class="staff_member">
-                  <div id="profile"><img src="{{ siteUrl }}{{ block.profile.first().url }}"></div>
-                  <div id="full_name">{{ block.fullName }}</div>
-                  <div id="title"><em>{{ block.jobTitle }}</em></div>
-                  <div id="bio">{{ block.bio }}</div>
-                  <div id="staff_email"><a href="mailto:{{ block.emailAddress }}">{{ block.emailAddress }}</a></div>
-                </div>
-              {% default %}
-                  <p>No content found.</p>
-
-          {% endswitch %}
-       {% endfor %}
+      {% else %}
+          <div>No sermons.</div>
+      {% endif %}
      </div><!-- End .container -->
    </div><!-- End #content -->
 
-{% endfor %}
 {% endblock %}

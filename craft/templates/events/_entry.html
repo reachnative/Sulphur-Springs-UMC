@@ -1,5 +1,5 @@
 {#
- # Events entry template
+ # News entry template
  # -------------------
  #
  # This template gets loaded whenever a News entry’s URL is
@@ -14,23 +14,40 @@
  #}
 
 {% extends "_layout" %}
-{% set title = "Events "%}
+{% set title = "Events" %}
 
 {% block content %}
 
-{% set bg_image = block.coverImageElement.first() %}
+{% if entry.redirectUrl %}
+    {% redirect entry.redirectUrl %}
+{% endif %}
+
+{% set bg_image = entry.coverImage.first() %}
+{% set entries = craft.entries.section('events') %}
 
 <div class="inside_cover"><div id="inside_title"><h1>Events</h1></div><div class="inside_bg_cover"><img src="{{ bg_image.getUrl }}"></div></div>
+<div id="inside_wrap">
+  <div id="content">
+  <div class="container">
+      <h2>Events</h2>
 
-<div id="inside_body_container">
-  <div id="body">
+      {% if entries %}
 
-       <h2>Events</h2>
-       {% set block = block.insidePageElements.first() %}
-       
-       <p>Coming Soon.</p>
+          {% for entry in entries %}
+            <div>
+              <h3>{{ entry.eventTitle }}</h3><br>
+              <p>{{ entry.eventDescription }}</p><br>
+              <p>{{ setartDate }} {% if endDate %} - {{ endDate }}{% endif %}</p><br>
+              <p>{{ startTime }} {% if endTime %} - {{ endTime }}{% endif %}</p>
+            </div>
 
-  </div>
-</div>
+          {% endfor %}
+
+      {% else %}
+        <div>No events.</div>
+      {% endif %}
+
+     </div><!-- End .container -->
+   </div><!-- End #content -->
 
 {% endblock %}
