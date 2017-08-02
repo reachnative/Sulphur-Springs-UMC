@@ -86,7 +86,7 @@
                   </audio>
 
               {% case "pdf" %}
-                  <div><img style="width: 24px; height: 24px;" src="{{ siteUrl }}images/pdf_icon_24x24.png"><a href="{{ block.pdfBlock.first().url }}">{{ block.pdfTitle }}</a></div>
+                  <div style="display: inline-block;"><img style="width: 24px; height: 24px; float: left; padding-right: 2px;" src="{{ siteUrl }}images/pdf_icon_24x24.png"><a style="text-decoration: none; color: #151515; float: left;" href="{{ block.pdfBlock.first().url }}">{{ block.pdfTitle }}</a></div>
 
               {% default %}
                   <p>No content found.</p>
