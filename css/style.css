@@ -55,6 +55,10 @@ ul li {
   list-style: none;
 }
 
+input {
+  -webkit-appearance: none;
+}
+
 #wrap {
   position: relative;
   overflow: hidden;
