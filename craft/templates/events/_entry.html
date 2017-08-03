@@ -29,25 +29,37 @@
 <div id="inside_wrap">
   <div id="content">
   <div class="container">
-      <h2>Events</h2>
+      <h2>Upcoming Events</h2>
 
       {% if entries %}
 
           {% for entry in entries %}
             <div>
               <h3>{{ entry.eventTitle }}</h3><br>
+              <div id="event_graphic"><img src="{{ eventGraphic.first().url }}"></div>
               <p>{{ entry.eventDescription }}</p><br>
-              <p>{{ setartDate }} {% if endDate %} - {{ endDate }}{% endif %}</p><br>
+              <p>{{ startDate }} {% if endDate %} - {{ endDate }}{% endif %}</p><br>
               <p>{{ startTime }} {% if endTime %} - {{ endTime }}{% endif %}</p>
             </div>
 
           {% endfor %}
 
       {% else %}
-        <div>No events.</div>
+        <div>No upcoming events.</div>
       {% endif %}
 
      </div><!-- End .container -->
+     <div class="discover_box_container">
+       <div class="discover_box">
+       <h1>Discover More</h1>
+       <ul>
+         <li><a href="{{ siteUrl }}sermons">Sermons</a></li>
+         <li><a href="{{ siteUrl }}events">Events</a></li>
+         <li><a href="{{ siteUrl }}serve">Serve</a></li>
+         <li><a href="{{ siteUrl }}belong">Belong</a></li>
+       </ul>
+     </div>
+   </div>
    </div><!-- End #content -->
 
 {% endblock %}

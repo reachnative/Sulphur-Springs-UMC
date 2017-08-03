@@ -28,15 +28,6 @@
 <div class="inside_cover"><div id="inside_title"><h1>{{ entry.title }}</h1></div><div class="inside_bg_cover"><img src="{{ bg_image.getUrl }}"></div></div>
 <div id="inside_wrap">
   <div id="content">
-    <div class="discover_box">
-      <h1>Discover More</h1>
-      <ul>
-        <li><a href="{{ siteUrl }}sermons">Sermons</a></li>
-        <li><a href="{{ siteUrl }}events">Events</a></li>
-        <li><a href="{{ siteUrl }}serve">Serve</a></li>
-        <li><a href="{{ siteUrl }}belong">Belong</a></li>
-      </ul>
-    </div>
   <div class="container">
       <h2>{{ entry.title }}</h2>
 
@@ -75,6 +66,17 @@
           {% endswitch %}
        {% endfor %}
      </div><!-- End .container -->
+     <div class="discover_box_container">
+       <div class="discover_box">
+       <h1>Discover More</h1>
+       <ul>
+         <li><a href="{{ siteUrl }}sermons">Sermons</a></li>
+         <li><a href="{{ siteUrl }}events">Events</a></li>
+         <li><a href="{{ siteUrl }}serve">Serve</a></li>
+         <li><a href="{{ siteUrl }}belong">Belong</a></li>
+       </ul>
+     </div>
+   </div>
    </div><!-- End #content -->
 
 {% endblock %}
