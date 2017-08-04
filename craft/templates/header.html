@@ -74,16 +74,23 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+  $(".main_nav ul.parent li").click(function() {
+    $(".main_nav ul.dropdown").toggle()
+  });
+});
+
+$(document).ready(function() {
   $(".menu_bar_inside").click(function() {
     $(".main_nav_inside").toggle()
   });
 });
 
 $(document).ready(function() {
-  $(".main_nav ul.parent li").click(function() {
-    $(".main_nav ul.dropdown").toggle()
+  $(".main_nav_inside ul.parent li").click(function() {
+    $(".main_nav_inside ul.inside_dropdown").toggle()
   });
 });
+
 
 </script>
 
