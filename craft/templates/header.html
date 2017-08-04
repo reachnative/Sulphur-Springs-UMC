@@ -1,7 +1,11 @@
 {% if craft.request.getSegment(1) == '' %}
     <header id="header_top">
           <div class="main_logo"><a href="{{ siteUrl }}"><img src="{{ siteUrl }}/images/ssumc_logo.png"></a></div>
-
+    <div class="menu_bar" onclick="navigation(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
       {% set parents = craft.entries.section('menu').getAncestors().level(1).limit(5) %}
       <nav class="main_nav">
           <ul class="parent">
@@ -28,7 +32,11 @@
 {% else %}
     <header id="header_inside">
           <div class="main_logo_white"><a href="{{ siteUrl }}"><img src="{{ siteUrl }}/images/ssumc_logo_white.png"></a></div>
-
+      <div class="menu_bar_inside" onclick="navigation(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
       {% set parents = craft.entries.section('menu').getAncestors().level(1).limit(5) %}
       <nav class="main_nav_inside">
         <ul class="parent">
@@ -54,6 +62,18 @@
     </header>
 
 {% endif %}
+<script>
+function navigation(x) {
+    x.classList.toggle("change");
+}
+
+$(document).ready(function() {
+  $(".menu_bar").click(function() {
+    $(".main_nav").toggle()
+  });
+});
+
+</script>
 
 <script>
 $.each($("ul > li"), function (index, obj) {

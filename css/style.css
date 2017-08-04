@@ -1022,9 +1022,6 @@ input.mc_email {
 @media only screen
 and (min--width : 375px)
 and (max-width : 667px) {
-  #header_top .main_nav {
-    display: none !important;
-  }
   #header_top {
     background-color: #151515 !important;
     height: 60px;
@@ -1129,8 +1126,98 @@ and (max-width : 667px) {
 }
 @media only screen
 and (max-width : 1090px) {
-  #header_top .main_nav {
-    display: none !important;
+
+  .menu_bar {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    float: right;
+    top: 40px;
+    right: 0;
+    padding-right: 20px;
+    z-index: 500;
+  }
+  .menu_bar_inside {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    float: right;
+    top: 40px;
+    right: 0;
+    padding-right: 20px;
+    z-index: 500;
+  }
+
+  .bar1, .bar2, .bar3 {
+    width: 50px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 10px 0;
+    transition: 0.4s;
+  }
+
+  .bar2 {
+    width: 30px !important;
+  }
+
+    /* Rotate first bar */
+  .change .bar1 {
+      -webkit-transform: rotate(-45deg) translate( -10px, 6px) ;
+      transform: rotate(-45deg) translate( -10px, 6px) ;
+  }
+
+  /* Fade out the second bar */
+  .change .bar2 {
+      opacity: 0;
+  }
+
+  /* Rotate last bar */
+  .change .bar3 {
+      -webkit-transform: rotate(45deg) translate(-12px, -8px) ;
+      transform: rotate(45deg) translate(-12px, -8px) ;
+  }
+  .main_nav {
+    width: 100%;
+    left: 0;
+    right: 0;
+    position: relative;
+    display: none;
+  }
+
+  .main_nav ul li {
+    float: left;
+    top: 98px;
+    width: 100%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    height: auto;
+    display: block;
+  }
+
+  .main_nav ul {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .main_nav ul li a {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 20px;
+    font-weight: 400;
+    background-color: #151515;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  main_nav ul li > li.dropdown {
+    display: block;
+    position: relative;
+    height: auto;
   }
   #header_top {
     background-color: #2F2F2F !important;
@@ -1174,9 +1261,6 @@ and (max-width : 1090px) {
     height: 300px;
   }
 
-  .main_nav {
-    display: none;
-  }
 
   .main_nav_inside {
     display: none;
