@@ -1199,6 +1199,17 @@ and (max-width : 1090px) {
     display: none !important;
     visibility: hidden;
   }
+  #homesection a div {
+    min-height: 100%;
+    overflow: hidden;
+  }
+
+  a .box_text {
+    position: relative;
+    font-size: 10vw;
+    top: 15vh!important;
+    overflow: hidden;
+  }
 
   .container {
     width: 90%;
@@ -1224,6 +1235,7 @@ and (max-width : 1090px) {
     right: 0;
   }
   .footer {
+    display: inline-block;
     height: 800px;
   }
   footer div {
