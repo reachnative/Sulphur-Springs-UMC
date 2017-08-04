@@ -1229,16 +1229,15 @@ and (max-width : 1090px) {
   }
 
   .main_logo {
-    left: 0;
+    left: 20px;
     top: 20px;
   }
 
   .main_logo img {
-    width: 200px;
+    width: 250px;
     height: auto;
     display: block;
     min-width: none;
-    margin: 0 auto;
   }
 
   .slider_container {
@@ -1267,13 +1266,12 @@ and (max-width : 1090px) {
   }
 
   .main_logo_white {
-    left: 0;
-    top: 30px;
+    left: 20px;
+    top: 20px;
   }
 
   .main_logo_white img {
-    width: 200px;
-    margin: 0 auto;
+    width: 250px;
     height: auto;
     display: block;
     min-width: none;
