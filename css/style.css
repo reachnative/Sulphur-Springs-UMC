@@ -544,7 +544,7 @@ a:hover #belong_block {
 
 #inside_wrap {
   position: relative;
-  height: 100%;
+  height: auto;
   min-height: 400px;
   background-color: #ffffff;
 }
@@ -580,6 +580,7 @@ a:hover #belong_block {
   width: 100%;
   min-height: 400px;
   height: auto;
+  padding-bottom: 50px;
   position: relative;
   clear: both;
 }
@@ -608,14 +609,15 @@ a:hover #belong_block {
   text-decoration: none;
 }
 .container {
-  top: 40px;
-  display: inline-block;
+  top: 60px;
   padding-left: 35px;
   padding-right: 20px;
   padding-bottom: 40px;
+  display: inline-block;
   position: relative;
   width: 70%;
   height: auto;
+  clear:both;
 }
 
 .container h2 {
@@ -628,15 +630,16 @@ a:hover #belong_block {
 }
 
 .discover_box_container {
-  position: inherit;
+  position: relative;
   display: block;
-  top: 0px;
+  top: 20px;
   margin-top: 20px;
   right: 20px;
-  width: 17rem;;
+  width: 17rem;
   max-width: 17rem;
   height: auto;
   float: right;
+  clear:both;
 
 }
 .discover_box {
@@ -708,54 +711,64 @@ a:hover #belong_block {
 /* Staff Section
 ======================*/
 .staff_member {
-  padding: 20px 0;
+  text-align: center;
+  width: 220px;
+  left: 0;
+  height: auto;
+  position: relative;
+  display: inline-block;
+  padding: 30px;
 }
 #profile img {
+  margin: 0 auto;
+  right: 0;
+  top: 0;
   position: relative;
   left: 0;
-  padding-right: 20px;
+  padding-bottom: 20px;
   display: block;
-  width: 200px;
+  width: 150px;
   height: auto;
 }
 
 #full_name {
-  top: -150px;
-  text-align: left;
-  font-size: 22px;
+  top: 0;
+  text-align: center;
+  font-size: 18px;
   font-weight: 600;
   position: relative;
-  left: 320px;
 }
 
 #title {
-  top: -150px;
-  text-align: left;
+  top: 0;
+  left: 0;
+  text-align: center;
   font-size: 14px;
   position: relative;
-  left: 320px;
 }
 
 #bio {
-  top: -150px;
-  text-align: left;
+  top: 0;
+  float: left;
+  text-align: center;
   font-size: 14px;
   position: relative;
-  left: 320px;
 
 }
 
 #staff_email {
-  top: -150px;
-  text-align: left;
+  top: 0;
+  float: left;
+  text-align: center;
   font-size: 14px;
   position: relative;
-  left: 320px;
   text-decoration: none;
 }
 
 #staff_email a {
   color: #151515;
+  float: left;
+  top: 0;
   padding-bottom: 1px;
   border-bottom: 2px solid #151515;
   text-decoration: none;
@@ -815,7 +828,9 @@ footer {
 }
 .footer {
   padding-top: 40px;
-  height: 500px;
+  left: 0;
+  min-height: 500px;
+  height: auto;
   width: 100%;
   color: #ffffff;
   display: block;
@@ -823,6 +838,15 @@ footer {
   background-color: #151515 !important;
   text-align: center;
   border-top: 8px solid #EB2439;
+}
+.footer-container {
+  margin: 0 auto;
+  left:0;
+  right: 0;
+  min-width: 60%;
+  float: right;
+  width: 80%;
+  position: relative;
 }
 
 .footer a {
@@ -871,6 +895,9 @@ footer {
 #second-column {
   float: left;
   left: 90px;
+  width: 20%;
+  min-width: 200px;
+  display: block;
   text-align: left;
   font-size: 12px;
   position: relative;
@@ -885,7 +912,10 @@ footer {
 
 #third-column {
   float: left;
-  left: 130px;
+  left: 90px;
+  width: 20%;
+  display: block;
+  min-width: 200px;
   text-align: left;
   font-size: 12px;
   position: relative;
@@ -900,7 +930,10 @@ footer {
 
 #forth-column {
   float: left;
-  left: 170px;
+  left: 90px;
+  width: 20%;
+  display: block;
+  min-width: 200px;
   text-align: left;
   font-size: 12px;
   position: relative;
@@ -915,8 +948,11 @@ footer {
 }
 
 #fifth-column {
-  float: right;
-  right: 40px;
+  float: left;
+  width: 20%;
+  min-width: 200px;
+  left: 130px;
+  display: block;
   text-align: left;
   font-size: 12px;
   position: relative;
