@@ -1184,10 +1184,11 @@ and (max-width : 1090px) {
     display: none;
   }
 
-  .main_nav ul li {
+  .main_nav ul.parent li {
     float: left;
-    top: 98px;
+    top: 82px;
     width: 100%;
+    background-color: #151515;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -1200,7 +1201,7 @@ and (max-width : 1090px) {
     width: 100%;
   }
 
-  .main_nav ul li a {
+  .main_nav ul.parent > li a {
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -1214,9 +1215,24 @@ and (max-width : 1090px) {
     display: block;
   }
 
-  main_nav ul li > li.dropdown {
-    display: block;
+  .main_nav ul.dropdown {
+    display: none;
     position: relative;
+    background-color: #2F2F2F;
+    left: 0;
+    right: -70px;
+    width: 100%;
+    height: auto;
+  }
+  .main_nav ul.dropdown li a {
+    margin: 0 auto;
+    width: 100%;
+    font-size: 20px;
+    position: relative;
+    background-color: #2F2F2F;
+    left: 0;
+    right: 0;
+    width: 100%;
     height: auto;
   }
   #header_top {
