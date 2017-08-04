@@ -90,6 +90,14 @@
               {% case "pdf" %}
                   <div style="display: inline-block;"><img style="width: 20px; height: 20px; float: left; padding-right: 10px;" src="{{ siteUrl }}images/pdf_icon_24x24.png"><a style="text-decoration: none; color: #151515; float: left;" href="{{ block.pdfBlock.first().url }}">{{ block.pdfTitle }}</a></div>
 
+              {% case "map" %}
+                    {% if block.mapButton %}
+                    <div id="map"><iframe width="100%" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA1esRDdoWM4136_4DchjpDsRI2z5JfJNk&q=Sulphur+Springs+United+Methodist+Church,Jonesborough+TN" allowfullscreen></iframe></div>
+
+                    {% else %}
+                      <div></div>
+                    {% endif %}
+
               {% default %}
                   <p>No content found.</p>
 

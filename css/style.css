@@ -681,6 +681,15 @@ a:hover #belong_block {
 .discover_box ul li a:hover {
   text-decoration: underline;
 }
+
+.map {
+  position: relative;
+  top: 0;
+  display: block;
+  padding-bottom: 20px;
+  width: 100%;
+  height: auto;
+}
 /* Events Section
 ======================*/
 #calendar_pdf {
