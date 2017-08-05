@@ -515,12 +515,15 @@ a:hover #belong_block {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  width: 100%;
+  height: 300px;
   z-index: -1;
 }
 .inside_bg_cover  img {
   flex-shrink: 0;
   min-width: 100%;
   min-height: 100%;
+  background-size: 100%;
   opacity: .4;
   overflow: cover;
   position: relative;
