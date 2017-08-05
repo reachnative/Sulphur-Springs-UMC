@@ -1124,6 +1124,10 @@ and (max-width : 667px) {
 @media only screen
 and (max-width : 1090px) {
 
+  .slider_button a {
+    font-size: 4vw;
+    width: 40%;
+  }
   .menu_bar {
     display: inline-block;
     cursor: pointer;
