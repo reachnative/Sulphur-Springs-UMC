@@ -690,6 +690,12 @@ a:hover #belong_block {
   height: auto;
 }
 
+#body_image img {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
 #outline a {
   text-decoration: none;
   color: #151515;
@@ -1507,6 +1513,7 @@ and (max-width : 1090px) {
     margin: 0 auto;
     left: 0;
     right: 0;
+    margin-bottom: 40px;
   }
 
   .container {

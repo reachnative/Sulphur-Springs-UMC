@@ -64,7 +64,7 @@
                   <div>{{ block.textField }}</div>
 
               {% case "image" %}
-                  <div><img src="{{ block.imageBlock.first().url }}"></div>
+                  <div id="body_image"><img src="{{ block.imageBlock.first().url }}"></div>
 
               {% case "video" %}
                   <div>{{ block.videoBlock.first() }}</div>
