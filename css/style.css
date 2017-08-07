@@ -598,8 +598,7 @@ a:hover #belong_block {
   height: auto;
   padding-right: 5px;
   padding-left: 5px;
-  float: left;
-  position: relative;
+  position: absolute;
 }
 #content p a {
   color: #EB2439;
