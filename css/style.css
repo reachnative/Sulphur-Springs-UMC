@@ -842,6 +842,7 @@ form {
 }
 
 input.name, input.emailaddress, textarea.message {
+  outline:none;
   margin-bottom: 20px;
   min-width: 200px;
   display: block;
@@ -851,6 +852,10 @@ input.name, input.emailaddress, textarea.message {
   border: 1px solid #d1d1d1;
   background: -webkit-linear-gradient(bottom, #e3e3e3, #ffffff);
 }
+input.name:focus, input.emailaddress:focus, textarea.message:focus {
+  border: 1px solid #EB2439;
+}
+
 
 textarea.message {
   top: 0;
