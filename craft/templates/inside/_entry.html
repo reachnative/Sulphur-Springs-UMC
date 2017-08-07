@@ -64,7 +64,7 @@
                   <div>{{ block.textField }}</div>
                   {% set image = block.textField.first() %}
                   {% if image %}
-                    <div><img src="{{ image.url }}" width="360px" height="280px" alt="{{ image.title }}"></div>
+                    <div id="body_image"><img src="{{ image.url }}" width="360px" height="280px" alt="{{ image.title }}"></div>
                   {% endif %}
 
               {% case "image" %}
