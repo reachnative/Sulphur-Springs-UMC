@@ -689,6 +689,17 @@ a:hover #belong_block {
   width: 100%;
   height: auto;
 }
+
+#outline a {
+  text-decoration: none;
+  color: #151515;
+}
+#outline a:hover {
+  text-decoration: none;
+  color: #EB2439;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #151515;
+}
 /* Events Section
 ======================*/
 #calendar_pdf {
