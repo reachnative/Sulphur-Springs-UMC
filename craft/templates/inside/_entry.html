@@ -119,11 +119,10 @@
               {% default %}
                   <p>No content found.</p>
           {% endswitch %}
+          {% if loop.last %}
+              <div style="margin-top: 40px; width: 100%; position: relative; border: 1px solid #e3e3e3;"></div>
+          {% endif %}
        {% endfor %}
-
-
-      <div style="margin-top: 40px; width: 100%; position: relative; border: 1px solid #e3e3e3;"></div>
-
 
        {% for block in entry.ministryTeams %}
           {% switch block.type %}
