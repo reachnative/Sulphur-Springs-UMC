@@ -59,7 +59,7 @@
           {% switch block.type %}
               {% case "header" %}
                   <h3>{{ block.bodyHeader }}</h3>
-                  
+
               {% case "text" %}
                   <div>{{ block.textField }}</div>
 
@@ -120,6 +120,19 @@
                   <p>No content found.</p>
           {% endswitch %}
        {% endfor %}
+
+       {% for block in entry.ministryTeams %}
+          {% switch block.type %}
+              {% case "ministryTeam" %}
+                  <h3>{{ block.teamTitle }}</h3>
+                  <div id="full_name">{{ block.teamLeader }}</div>
+                  <div id="staff_email"><a href="mailto:{{ block.groupEmailAddress }}">{{ block.groupEmailAddress }}</a></div>
+
+              {% default %}
+                  <p>No content found.</p>
+
+          {% endswitch %}
+        {% endfor %}
 
      </div><!-- End .container -->
    </div><!-- End #content -->
