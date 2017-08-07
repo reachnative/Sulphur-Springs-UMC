@@ -783,6 +783,7 @@ a:hover #belong_block {
 }
 
 #ministry_teams {
+  display: inline-block;
   margin: 0 auto;
   left: 0;
   right: 0;
