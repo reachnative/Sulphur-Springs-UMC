@@ -596,9 +596,8 @@ a:hover #belong_block {
   max-width: 100%;
   width: auto;
   height: auto;
-  display: block;
+  float: left;
   position: relative;
-  clear: both;
 }
 #content p a {
   color: #EB2439;
