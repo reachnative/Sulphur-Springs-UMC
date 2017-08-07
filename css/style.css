@@ -593,6 +593,13 @@ a:hover #belong_block {
   font-weight: 300;
 }
 #content img {
+  maxwidth: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  clear: both;
+}
+#content > #body_image img {
   max-width: 100%;
   width: auto;
   height: auto;
@@ -601,6 +608,7 @@ a:hover #belong_block {
   padding-left: 5px;
   position: relative;
 }
+
 #content p a {
   color: #EB2439;
   text-decoration: none;
