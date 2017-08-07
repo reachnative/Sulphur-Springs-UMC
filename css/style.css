@@ -782,6 +782,20 @@ a:hover #belong_block {
   text-decoration: none;
 }
 
+#ministry_teams {
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  position: relative;
+  padding-bottom: 30px;
+}
+
+#team_leader {
+  float: left;
+  font-size: 13px;
+  font-weight: 400;
+}
+
 /* Forms
 ======================*/
 
