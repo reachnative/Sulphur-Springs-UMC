@@ -782,7 +782,7 @@ a:hover #belong_block {
   text-decoration: none;
 }
 
-#ministry_teams {
+#ministry_team {
   text-align: left;
   width: 220px;
   left: 0;
@@ -792,7 +792,7 @@ a:hover #belong_block {
   padding: 30px;
 }
 
-#ministry_teams h4 {
+#ministry_team h4 {
   top: 0;
   text-align: left;
   position: relative;
