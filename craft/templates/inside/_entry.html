@@ -120,9 +120,10 @@
                   <p>No content found.</p>
           {% endswitch %}
        {% endfor %}
-       {% if craft.entry.ministryTeams %}
-         <div style="margin-top: 40px; width: 100%; position: relative; border: 1px solid #e3e3e3;"></div>
-       {% endif %}
+
+
+      <div style="margin-top: 40px; width: 100%; position: relative; border: 1px solid #e3e3e3;"></div>
+
 
        {% for block in entry.ministryTeams %}
           {% switch block.type %}
@@ -133,7 +134,7 @@
 
               {% case "ministryTeam" %}
                 <div id="ministry_team">
-                  <h4>{{ block.teamTitle }}</h4>
+                  <div id="team_title">{{ block.teamTitle }}</div>
                   <div id="team_leader">{{ block.teamLeader }}</div>
                   <div id="staff_email"><a href="mailto:{{ block.groupEmailAddress }}">{{ block.groupEmailAddress }}</a></div>
                 </div>

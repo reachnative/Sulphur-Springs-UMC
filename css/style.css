@@ -807,6 +807,14 @@ a:hover #belong_block {
   position: relative;
 }
 
+#team_title {
+  top: 0;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+}
+
 /* Forms
 ======================*/
 
