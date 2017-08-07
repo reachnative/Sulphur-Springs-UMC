@@ -35,7 +35,8 @@
         {% for page in pages %}
           <h3>{{ page.sermonTitle }}</h3><br>
           <div>{{ page.sermonDate | date("M d, Y") }}</div><br>
-          <div><a href="{{ page.sermonPdf.first().url }}"><img style="width: 20px; height: 20px; float: left; padding-right: 10px;" src="{{ siteUrl }}images/pdf_icon_24x24.png">{{ page.sermonPdf }}</a></div>
+          {% set assets = page.sermonPdf.first() %}
+          <div><a href="{{ assets.getUrl() }}"><img style="width: 20px; height: 20px; float: left; padding-right: 10px;" src="{{ siteUrl }}images/pdf_icon_24x24.png">{{ assets }}</a></div>
           {% set asset = page.sermonAudio.first() %}
           {% if asset %}
             <audio controls><source src="{{ asset.getUrl() }}" type="audio/mpeg"></audio><br><br>
