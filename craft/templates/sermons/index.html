@@ -35,11 +35,11 @@
         {% for page in pages %}
           <h3>{{ page.sermonTitle }}</h3><br>
           <div>{{ page.sermonDate | date("M d, Y") }}</div><br>
+          <div><a href="{{ page.sermonPdf.getUrl() }}"><img style="width: 20px; height: 20px; float: left; padding-right: 10px;" src="{{ siteUrl }}images/pdf_icon_24x24.png">{{ page.sermonPdf }}</a></div>
           {% set asset = page.sermonAudio.first() %}
           {% if asset %}
             <audio controls><source src="{{ asset.getUrl() }}" type="audio/mpeg"></audio><br><br>
           {% endif %}
-          <div><a href="{{ page.sermonPdf.getUrl() }}"><img style="width: 20px; height: 20px; float: left; padding-right: 10px;" src="{{ siteUrl }}images/pdf_icon_24x24.png">{{ page.sermonPdf }}</a></div>
               {% if craft.entries.section('sermons') | length > 1 %}
                 <div style="width: 100%; position: relative; border: 1px solid #e3e3e3;"></div>
               {% endif %}
