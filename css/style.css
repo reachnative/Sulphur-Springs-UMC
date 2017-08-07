@@ -783,18 +783,28 @@ a:hover #belong_block {
 }
 
 #ministry_teams {
-  display: inline-block;
-  margin: 0 auto;
+  text-align: left;
+  width: 220px;
   left: 0;
-  right: 0;
+  height: auto;
   position: relative;
-  padding-bottom: 30px;
+  display: inline-block;
+  padding: 30px;
+}
+
+#ministry_teams h4 {
+  top: 0;
+  text-align: left;
+  position: relative;
 }
 
 #team_leader {
-  float: left;
-  font-size: 13px;
+  top: 0;
+  left: 0;
+  text-align: left;
+  font-size: 14px;
   font-weight: 400;
+  position: relative;
 }
 
 /* Forms
