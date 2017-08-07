@@ -593,13 +593,13 @@ a:hover #belong_block {
   font-weight: 300;
 }
 #content img {
-  maxwidth: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
   position: relative;
   clear: both;
 }
-#content > #body_image img {
+#content #body_section img {
   max-width: 100%;
   width: auto;
   height: auto;
