@@ -1,27 +1,115 @@
 {#
- # News index template
+ # Serve template
  # -------------------
  #
- # This template is loaded whenever http://example.com/news is
- # requested, because it is located at news/index.html in your
- # craft/templates/ folder.
+ # This template gets loaded whenever a News entry’s URL is
+ # requested. That’s because the News section’s Template setting is
+ # set to “news/_entry”, the path to this template.
+ #
+ # When this template is loaded, it will already have an ‘entry’
+ # variable, set to the requested News entry.
  #
  # See this page for more details on how Craft routes requests:
  # http://craftcms.com/docs/routing
  #}
 
 {% extends "_layout" %}
-{% set title = "News" %}
 
 {% block content %}
-	<h1>News</h1>
 
-	{% for entry in craft.entries.section('news').find() %}
-		<article>
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-			{{ entry.body.getPage(1) }}
-			<p><a href="{{ entry.url }}">Continue reading</a></p>
-		</article>
-	{% endfor %}
+{% if entry.redirectUrl %}
+    {% redirect entry.redirectUrl %}
+{% endif %}
+
+{% set bg_image = entry.coverImage.first() %}
+
+
+
+  <div class="inside_cover"><div id="inside_title"><h1>Serve</h1></div><div class="inside_bg_cover"><img src="{{ bg_image.getUrl }}"></div></div>
+<div id="inside_wrap">
+  <div id="content">
+       <div class="discover_box_container">
+         <div class="discover_box">
+         <h1>Discover More</h1>
+         <ul>
+           <li><a href="{{ siteUrl }}sermons">Sermons</a></li>
+           <li><a href="{{ siteUrl }}events">Events</a></li>
+           <li><a href="{{ siteUrl }}serve">Serve</a></li>
+           <li><a href="{{ siteUrl }}belong">Belong</a></li>
+         </ul>
+       </div>
+     </div>
+  <div class="container">
+      <h2>Serve</h2>
+
+       {% for block in entry.insidePageElements %}
+          {% switch block.type %}
+
+              {% case "header" %}
+                  <h3>{{ block.bodyHeader }}</h3>
+
+              {% case "text" %}
+                  <div>{{ block.textField }}</div>
+
+              {% case "image" %}
+                  <div><img src="{{ block.imageBlock.first().url }}"></div>
+
+              {% case "video" %}
+                  <div>{{ block.videoBlock.first() }}</div>
+
+              {% case "form"%}
+                  {% set dropdownValue = block.selectFormType.value %}
+                      {% if dropdownValue == 'contactUs' %}
+                        {% include 'forms/contactus.html' %}
+
+                      {% elseif dropdownValue == 'registrationForm' %}
+                        {% include 'forms/registrationform.html' %}
+
+                      {% elseif dropdownValue == 'prayerRequest' %}
+                        {% include 'forms/prayerrequest.html' %}
+                      {% else %}
+                        <div></div>
+
+                      {% endif %}
+
+              {% case "audio" %}
+                  <audio controls>
+                    <source src="{{ block.audioBlock.first().url }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+
+              {% case "pdf" %}
+                  <div style="display: inline-block;"><img style="width: 20px; height: 20px; float: left; padding-right: 10px;" src="{{ siteUrl }}images/pdf_icon_24x24.png"><a style="text-decoration: none; color: #151515; float: left;" href="{{ block.pdfBlock.first().url }}">{{ block.pdfTitle }}</a></div>
+
+              {% case "map" %}
+                    {% if block.mapButton %}
+                    <div id="map"><iframe width="100%" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA1esRDdoWM4136_4DchjpDsRI2z5JfJNk&q=Sulphur+Springs+United+Methodist+Church,Jonesborough+TN" allowfullscreen></iframe></div>
+
+                    {% else %}
+                      <div></div>
+                    {% endif %}
+
+              {% default %}
+                  <p>No content found.</p>
+
+          {% endswitch %}
+        {% endfor %}
+       {% for block in entry.staffDirectory %}
+          {% switch block.type %}
+              {% case "staffMember" %}
+                <div class="staff_member">
+                  <div id="profile"><img src="{{ siteUrl }}{{ block.profile.first().url }}"></div>
+                  <div id="full_name">{{ block.fullName }}</div>
+                  <div id="title"><em>{{ block.jobTitle }}</em></div>
+                  <div id="bio">{{ block.bio }}</div>
+                  <div id="staff_email"><a href="mailto:{{ block.emailAddress }}">{{ block.emailAddress }}</a></div>
+                </div>
+              {% default %}
+                  <p>No content found.</p>
+          {% endswitch %}
+       {% endfor %}
+
+     </div><!-- End .container -->
+   </div><!-- End #content -->
+
 {% endblock %}
