@@ -123,6 +123,10 @@
 
        {% for block in entry.ministryTeams %}
           {% switch block.type %}
+
+              {% case "headerMinistry" %}
+                  <h2 align="center">{{ block.headerTitle }}</h2>
+
               {% case "ministryTeam" %}
                   <h3>{{ block.teamTitle }}</h3>
                   <div id="full_name">{{ block.teamLeader }}</div>
