@@ -57,6 +57,9 @@
 
        {% for block in entry.insidePageElements %}
           {% switch block.type %}
+              {% case "header" %}
+                  <h3>{{ block.bodyHeader }}</h3>
+                  
               {% case "text" %}
                   <div>{{ block.textField }}</div>
 
