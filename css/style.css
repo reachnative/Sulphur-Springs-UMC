@@ -1023,9 +1023,6 @@ input.mc_email {
   outline: none;
 }
 
-input.mc_email:focus {
-  border: 1px solid #EB2439;
-}
 input.mc_email::placeholder  {
   color: #95989A;
 }
