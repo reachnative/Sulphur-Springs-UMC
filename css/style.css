@@ -691,7 +691,7 @@ a:hover #belong_block {
 }
 
 #body_image img {
-  width: 100%;
+  width: auto;
   height: auto;
   position: relative;
 }
@@ -1508,12 +1508,14 @@ and (max-width : 1090px) {
     margin: 0 auto;
     overflow: hidden;
   }
+
   #content {
     width: 100%;
     margin: 0 auto;
     left: 0;
     right: 0;
     margin-bottom: 40px;
+
   }
 
   .container {
