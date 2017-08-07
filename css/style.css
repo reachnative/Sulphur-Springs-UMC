@@ -853,7 +853,7 @@ input.name, input.emailaddress, textarea.message {
   background: -webkit-linear-gradient(bottom, #e3e3e3, #ffffff);
 }
 input.name:focus, input.emailaddress:focus, textarea.message:focus {
-  border: 1px solid #EB2439;
+  border: 2px solid #EB2439;
 }
 
 
