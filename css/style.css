@@ -692,6 +692,8 @@ a:hover #belong_block {
 
 #body_image img {
   width: auto;
+  max-width: 100%;
+  overflow: hidden;
   height: auto;
   position: relative;
 }
