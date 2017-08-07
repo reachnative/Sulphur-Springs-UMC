@@ -783,9 +783,11 @@ a:hover #belong_block {
 }
 
 #ministry_team {
+  margin: 0 auto;
   text-align: left;
   width: 300px;
   left: 0;
+  right: 0;
   height: auto;
   position: relative;
   display: inline-block;
