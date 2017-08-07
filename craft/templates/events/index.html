@@ -33,7 +33,7 @@
 
       {% if craft.entries.section('events') | length %}
       {% set present = now %}
-        {% for page in craft.entries.section('events').order('startDate').startDate('>=' ~ present) %}
+        {% for page in craft.entries.section('events').order('startDate').endDate('>=' ~ present) %}
           <h3>{{ page.eventTitle }}</h3><br>
           <div id="event_graphic">{% if page.eventGraphic %}<img src="{{ page.eventGraphic.first().url }}">{% endif %}</div>
           <div>{{ page.eventDescription }}</div><br>
