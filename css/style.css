@@ -39,6 +39,11 @@ div {
   display: block;
 }
 
+hr {
+  border-style: none;
+  border: 2px solid #e3e3e3;
+}
+
 a {
   text-decoration: none;
 }
