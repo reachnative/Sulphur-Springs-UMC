@@ -37,7 +37,11 @@
               {% case "header" %}
                   <h3>{{ block.bodyHeader }}</h3>
               {% case "text" %}
-                  <div>{{ block.textField }}</div>
+                  <div id="body_section">{{ block.textField }}</div>
+                  {% set image = block.textField.first() %}
+                  {% if image %}
+                    <div id="body_image"><img src="{{ image.url }}" width="360px" height="280px" alt="{{ image.title }}"></div>
+                  {% endif %}
 
               {% case "image" %}
                   <div><img src="{{ block.imageBlock.first().url }}"></div>
