@@ -31,28 +31,31 @@
   <div class="container">
       <h2>{{ entry.title }}</h2>
 
-       {% for block in entry.insidePageElements %}
-          {% switch block.type %}
+      {% for block in entry.insidePageElements %}
+         {% switch block.type %}
 
-              {% case "header" %}
-                  <h3>{{ block.bodyHeader }}</h3>
+             {% case "header" %}
+                 <h3>{{ block.bodyHeader }}</h3>
+             {% case "text" %}
+                 <div id="body_section">{{ block.textField }}</div>
+                 {% set image = block.textField.first() %}
+                 {% if image %}
+                   <div id="body_image"><img src="{{ image.url }}" width="360px" height="280px" alt="{{ image.title }}"></div>
+                 {% endif %}
 
-              {% case "text" %}
-                  <div>{{ block.textField }}</div>
+             {% case "image" %}
+                 <div><img src="{{ block.imageBlock.first().url }}"></div>
 
-              {% case "image" %}
-                  <div><img src="{{ block.imageBlock.first().url }}"></div>
+             {% case "video" %}
+                 <div>{{ block.videoBlock.first() }}</div>
 
-              {% case "video" %}
-                  <div>{{ block.videoBlock.first() }}</div>
+             {% case "form" %}
 
-              {% case "form" %}
+             {% default %}
+                 <p>No content found.</p>
 
-              {% default %}
-                  <p>No content found.</p>
-
-          {% endswitch %}
-       {% endfor %}
+         {% endswitch %}
+      {% endfor %}
 
        {% for block in entry.staffDirectory %}
           {% switch block.type %}
