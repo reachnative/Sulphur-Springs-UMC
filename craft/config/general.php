@@ -10,7 +10,13 @@
 return array(
 
 	// Base site URL
-	'siteUrl' => null,
+	'.dev' => array(
+			'siteUrl' => 'http://sulphurspringsumc.dev:8888',
+	),
+
+	'.com' => array(
+			'siteUrl' => 'http://www.sulphurspringsumc.com',
+	),
 
 	// Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
 	'environmentVariables' => array(),
