@@ -11,15 +11,29 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
-<head>
+<head itemscope itemtype="http://schema.org/WebSite">
 	<meta charset="utf-8" />
-	<title>{% if entry.title is defined %}{{ entry.title }} - {% endif %}{{ siteName }}</title>
+	<title itemprop="name">{% if entry.title is defined %}{{ entry.title }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
+  <link rel="canonical" href="http://www.sulphurspringsumc.com" itemprop="url">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="googlebot" content="noindex, nofollow">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="We are a congregation of over four hundred members in the beautiful Sulphur Springs community in Washington County, TN. We are a congregation
+  with a unique history and an exciting future. We are the United Methodists, but most importantly, we are disciples of Jesus Christ. We are people just like you.">
+  <meta name="google-site-verification" content="Pcs3yrzUeZJjU_j2Pailkx7m5gc4d2g94d-z4PMiNDE" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Sulphur Springs United Methodist Church",
+  "url": "http://www.sulphurspringsumc.com",
+  "sameAs": [
+    "http://www.facebook.com/campshed"
+  ]
+}
+</script>
   {% include 'analytics.php' %}
 </head>
 

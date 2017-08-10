@@ -1,6 +1,6 @@
 {% if craft.request.getSegment(1) == '' %}
     <header id="header_top">
-          <div class="main_logo"><a href="{{ siteUrl }}"><img src="{{ siteUrl }}/images/ssumc_logo.png"></a></div>
+          <div itemscope itemtype="http://www.schema.org/Organization" class="main_logo"><a itemprop="url" href="{{ siteUrl }}"><img itemprop="logo" src="{{ siteUrl }}/images/ssumc_logo.png"></a></div>
     <div class="menu_bar" onclick="navigation(this)">
       <div class="bar1"></div>
       <div class="bar2"></div>
