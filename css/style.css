@@ -419,7 +419,7 @@ a #sermons_block {
   min-width: 225px;
   min-height:460px;
   background-color: #151515 !important;
-  background: url(http://dev.sulphurspringsumc.com/images/media/sermon.jpg);
+  background: url(http://www.sulphurspringsumc.com/images/media/sermon.jpg);
   background-size: cover;
   overflow: hidden;
   transition: 3s ease-in-out;
@@ -438,7 +438,7 @@ a:hover #sermons_block {
 
 a #events_block {
   position: inherit;
-  background: url(http://dev.sulphurspringsumc.com/images/media/event.jpg);
+  background: url(http://www.sulphurspringsumc.com/images/media/event.jpg);
   background-size: cover;
   left: 0;
   top: 0;
@@ -461,7 +461,7 @@ a:hover #events_block {
 
 a #serve_block {
   position: inherit;
-  background-image: url(http://dev.sulphurspringsumc.com/images/media/missions3.jpeg);
+  background-image: url(http://www.sulphurspringsumc.com/images/media/missions3.jpeg);
   background-size: cover;
   background-color: rgba(21, 21, 21, 1);
   left: 0;
@@ -485,7 +485,7 @@ a:hover #serve_block {
 
 a #belong_block {
   position: inherit;
-  background-image: url(http://dev.sulphurspringsumc.com/images/media/belong-3.jpg);
+  background-image: url(http://www.sulphurspringsumc.com/images/media/belong-3.jpg);
   background-size: cover;
   left: 0;
   top: 0;
