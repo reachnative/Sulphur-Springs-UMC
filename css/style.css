@@ -429,7 +429,7 @@ a:hover #sermons_block {
   left: 0;
   top: 0;
   float: left;
-  background: linear-gradient( rgba(21, 21, 21, 0.8), rgba(21, 21, 21, 0.8) ), url(http://dev.sulphurspringsumc.com/images/media/sermon.jpg);
+  background: linear-gradient( rgba(21, 21, 21, 0.8), rgba(21, 21, 21, 0.8) ), url(http://www.sulphurspringsumc.com/images/media/sermon.jpg);
   background-color: #151515;
   background-size: cover;
   overflow: hidden;
@@ -452,7 +452,7 @@ a:hover #events_block {
   left: 0;
   top: 0;
   float: left;
-  background: linear-gradient( rgba(21, 21, 21, 0.8), rgba(21, 21, 21, 0.8) ), url(http://dev.sulphurspringsumc.com/images/media/event.jpg);
+  background: linear-gradient( rgba(21, 21, 21, 0.8), rgba(21, 21, 21, 0.8) ), url(http://www.sulphurspringsumc.com/images/media/event.jpg);
   background-color: #151515;
   background-size: cover;
   overflow: hidden;
@@ -476,7 +476,7 @@ a:hover #serve_block {
   left: 0;
   top: 0;
   float: left;
-  background: linear-gradient( rgba(21, 21, 21, 0.8), rgba(21, 21, 21, 0.8) ), url(http://dev.sulphurspringsumc.com/images/media/missions3.jpeg);
+  background: linear-gradient( rgba(21, 21, 21, 0.8), rgba(21, 21, 21, 0.8) ), url(http://www.sulphurspringsumc.com/images/media/missions3.jpeg);
   background-color: #151515;
   background-size: cover;
   overflow: hidden;
@@ -499,7 +499,7 @@ a:hover #belong_block {
   left: 0;
   top: 0;
   float: left;
-  background: linear-gradient( rgba(21, 21, 21, 0.8), rgba(21, 21, 21, 0.8) ), url(http://dev.sulphurspringsumc.com/images/media/belong-3.jpg);
+  background: linear-gradient( rgba(21, 21, 21, 0.8), rgba(21, 21, 21, 0.8) ), url(http://www.sulphurspringsumc.com/images/media/belong-3.jpg);
   background-color: #151515;
   background-size: cover;
   overflow: hidden;
