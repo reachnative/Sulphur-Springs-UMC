@@ -39,6 +39,7 @@
           <div>{{ page.eventDescription }}</div><br>
           <div><strong>Start Date:</strong> {{ page.startDate | date("M d, Y") }} {% if page.endDate %}<br> <strong>End Date:</strong> {{ page.endDate | date("M d, Y") }}{% endif %}</div><br>
           <div>{{ page.startTime.localeTime() }} {% if page.endTime %} - {{ page.endTime.localeTime() }}{% endif %}</div><br><br>
+          {% if page.pageRedirect %}<div class="event_button"><a href="{{ page.pageRedirect }}">More Info</a></div>{% endif %}
           <div style="width: 100%; position: relative; border: 1px solid #e3e3e3;"></div>
         {% endfor %}
 

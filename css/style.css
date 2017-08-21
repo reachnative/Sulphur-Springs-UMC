@@ -750,6 +750,28 @@ a:hover #belong_block {
   height: auto;
 }
 
+.event_button a {
+  font-size: 14px;
+  color: #151515;
+  padding: 10px 15px;
+  border: 2px solid #151515;
+  background-color: #ffffff;
+  float: right;
+  top: -80px;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.event_button a:hover {
+  color: #ffffff;
+  padding: 10px 15px;
+  border: 2px solid #EB2439;
+  background-color: #EB2439;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* Staff Section
 ======================*/
 .staff_member {
