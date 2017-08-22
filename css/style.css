@@ -728,8 +728,8 @@ a:hover #belong_block {
 #calendar_pdf {
   position: relative;
   display: block;
-  top: -50px;
-  float: right;
+  top: 0;
+  float: left:
   z-index: 2;
 }
 
@@ -748,6 +748,15 @@ a:hover #belong_block {
 #event_graphic img {
   width: 175px;
   height: auto;
+}
+
+.event_body {
+  padding-left: 20px;
+  left: 0px;
+  overflow: hidden;
+  display: block;
+  text-align: left;
+  position: relative;
 }
 
 .event_button a {
