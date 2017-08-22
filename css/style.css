@@ -1130,7 +1130,7 @@ input.mc_email {
 ======================*/
 /* iPhone 6 & 7 - Portait and Landscape */
 @media only screen
-and (min--width : 375px)
+and (min-width : 375px)
 and (max-width : 667px) {
   #header_top {
     background-color: #151515 !important;
@@ -1232,6 +1232,35 @@ and (max-width : 667px) {
     margin: 0 auto;
     position: relative;
     float:none;
+  }
+  /* Events Section
+  ================*/
+  #event_graphic {
+    position: relative;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    display: block;
+  }
+
+  #event_graphic img {
+    width: 300px;
+    height: auto;
+    display: block;
+    padding-bottom: 20px;
+  }
+  .event_button {
+    top: 60px;
+    position: relative;
+  }
+
+  .event_body {
+    padding: 0px;
+    left: 0;
+    width: 100%;
+    position: relative;
+    display: block;
+    text-align: left;
   }
 }
 @media only screen
