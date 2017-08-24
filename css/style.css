@@ -604,11 +604,20 @@ a:hover #belong_block {
   position: relative;
   clear: both;
 }
+
+#body_section p {
+  left: 0px;
+  overflow: hidden;
+  display: block;
+  text-align: left;
+  position: relative;
+}
 #content #body_section img {
   max-width: 100%;
   width: auto;
   height: auto;
   float: left;
+  left: 0;
   padding-right: 15px;
   padding-bottom: 15px;
   position: relative;
@@ -1261,6 +1270,14 @@ and (max-width : 667px) {
     position: relative;
     display: block;
     text-align: left;
+  }
+  #content #body_section img {
+    width: 400px !important;
+    height: auto;
+    float: left;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    position: relative;
   }
 }
 @media only screen
